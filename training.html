@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<title>FJH · 训练计划</title>
+<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="./">
+      <span class="mark">FJH/01</span>
+      <span class="mark-divider">·</span>
+      <span class="title">86 → 65 kg</span>
+    </a>
+    <div class="nav-links">
+      <a href="./">概览</a>
+      <a href="./training.html" class="active">训练</a>
+      <a href="./diet.html">饮食</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <header class="hero fade-in">
+    <div class="hero-eyebrow">
+      <span>17-WEEK PROGRESSION · CARDIO + STRENGTH</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="num">17</span><span class="t-dim" style="font-size:0.45em;font-weight:500;letter-spacing:-1px;margin-left:14px">周计划</span>
+    </h1>
+    <p class="t-dim" style="font-size:14px;max-width:620px;margin-top:18px;line-height:1.7">
+      Foundation 4w → Push 4w → <span class="t-gold">Diet Break 1w</span> → Sustain 4w → Final Push 4w<br>
+      所有"跑"用跑步机坡度走代替（膝盖友好）；力量训练保护肌肉量。
+    </p>
+  </header>
+
+  <!-- PHASE OVERVIEW -->
+  <section class="section fade-in delay-1">
+    <div class="section-head">
+      <span class="num mono">01</span>
+      <h2>阶段地图</h2>
+      <span class="meta" id="phaseSummary">--</span>
+    </div>
+    <div id="phasesContainer">
+      <!-- rendered -->
+    </div>
+  </section>
+
+  <!-- WEEK BY WEEK -->
+  <section class="section fade-in delay-2">
+    <div class="section-head">
+      <span class="num mono">02</span>
+      <h2>逐周日历</h2>
+      <span class="meta" id="weeksSummary">CLICK ANY DAY</span>
+    </div>
+    <div id="weeksContainer">
+      <!-- rendered -->
+    </div>
+  </section>
+
+</main>
+
+<!-- WORKOUT DETAIL MODAL -->
+<div class="modal-bg" id="wkModal" onclick="if(event.target===this)closeWkModal()">
+  <div class="modal" style="max-width:520px">
+    <button class="modal-close" onclick="closeWkModal()">×</button>
+    <div class="modal-head">
+      <span class="num" id="wkModalDate">--</span>
+      <h3 id="wkModalTitle">--</h3>
+    </div>
+    <div id="wkModalBody"></div>
+    <div class="row row-2" style="margin-top:18px">
+      <button class="btn ghost" onclick="closeWkModal()">关闭</button>
+      <button class="btn primary" id="wkToggleBtn" onclick="wkToggle()">标记完成</button>
+    </div>
+  </div>
+</div>
+
+<script src="./assets/app.js"></script>
+<script>
+let _plan = null;
+let _activeWorkoutId = null;
+
+async function init() {
+  _plan = await FJH.loadPlan();
+  renderPhases();
+  renderWeeks();
+}
+
+function renderPhases() {
+  const ph = _plan.phases;
+  const container = document.getElementById('phasesContainer');
+  document.getElementById('phaseSummary').textContent = `${ph.length} PHASES · ${FJH.TOTAL_WEEKS} WEEKS`;
+
+  // Build a horizontal phase bar with week ranges
+  const totalWeeks = FJH.TOTAL_WEEKS;
+  const wi = FJH.weekIndex();
+
+  const colors = {
+    'Foundation': 'var(--ink-3)',
+    'Push': 'var(--gold)',
+    'Diet Break': 'var(--blue)',
+    'Sustain': 'var(--gold)',
+    'Final Push': 'var(--red)',
+  };
+
+  // Bar
+  let bar = `<div style="display:flex;height:6px;background:var(--bg-elevated);margin:8px 0 18px;border:1px solid var(--border)">`;
+  ph.forEach(p => {
+    const w = ((p.endWeek - p.startWeek + 1) / totalWeeks) * 100;
+    bar += `<div style="flex:0 0 ${w}%;background:${colors[p.name]};opacity:0.85" title="${p.name}"></div>`;
+  });
+  bar += `</div>`;
+
+  // Cards
+  let cards = `<div class="row row-3" style="gap:12px">`;
+  ph.forEach(p => {
+    const isCurrent = wi >= p.startWeek && wi <= p.endWeek;
+    cards += `
+      <div class="card ${isCurrent ? '' : ''}" style="padding:18px;${isCurrent ? 'border-color:var(--gold);background:linear-gradient(155deg,var(--gold-tint),transparent 60%)' : ''}">
+        <div class="card-head" style="margin-bottom:10px">
+          <h3 style="font-size:14px">${p.name}</h3>
+          <span class="small mono" style="font-size:9px">W${p.startWeek}–W${p.endWeek}</span>
+        </div>
+        <p style="font-size:12px;line-height:1.5;color:var(--ink-2);margin-bottom:10px">${p.focus}</p>
+        <div class="mono t-dim" style="font-size:10px;letter-spacing:1px">
+          ${p.weeklyHoursRange.low}–${p.weeklyHoursRange.high} H / WK
+        </div>
+      </div>`;
+  });
+  cards += `</div>`;
+
+  container.innerHTML = bar + cards;
+}
+
+function renderWeeks() {
+  const container = document.getElementById('weeksContainer');
+  const state = FJH.loadState();
+  const wi = FJH.weekIndex();
+  const di = FJH.dayIndex();
+
+  let html = '';
+  _plan.weeks.forEach(w => {
+    const isCurrent = w.weekNumber === wi;
+    const isRecovery = w.isRecoveryWeek;
+    const klass = `week-card ${isCurrent ? 'current' : ''} ${isRecovery ? 'recovery' : ''}`;
+
+    let dayCells = '';
+    w.days.forEach((d, idx) => {
+      const dayAbsIdx = (w.weekNumber - 1) * 7 + idx;
+      const isToday = dayAbsIdx === di;
+      const isRest = !d.workouts.length || d.workouts[0].sport === 'rest';
+      const allDone = !isRest && d.workouts.every(wkt => FJH.isWorkoutDone(state, wkt.id));
+
+      let pills = '';
+      if (!isRest) {
+        d.workouts.forEach(wkt => {
+          const klass = wkt.type === 'strength' ? 'strength' : (wkt.sport === 'bike' ? 'stair' : 'cardio');
+          const lbl = wkt.type === 'strength' ? 'STR' : (wkt.sport === 'bike' ? 'STAIR' : (wkt.type === 'interval' ? 'HIIT' : 'CARDIO'));
+          pills += `<span class="day-pill ${klass}">${lbl} ${wkt.durationMinutes || ''}</span>`;
+        });
+      }
+
+      const dStr = d.date.slice(5).replace('-', '/');
+      const dowShort = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'][idx];
+
+      dayCells += `
+        <div class="day-cell ${isToday ? 'today' : ''} ${isRest ? 'rest' : ''} ${allDone ? 'done' : ''}"
+             onclick='showWorkoutDetail(${w.weekNumber}, ${idx})'>
+          <div class="day-head">
+            <span class="day-dow">${dowShort}</span>
+            <span class="day-num">${dStr}</span>
+          </div>
+          <div class="day-body">
+            ${isRest ? '<span class="t-dim mono" style="font-size:10px">REST</span>' : pills}
+          </div>
+        </div>`;
+    });
+
+    html += `
+      <div class="${klass}" id="week-${w.weekNumber}">
+        <div class="week-card-head">
+          <span class="week-num">W${String(w.weekNumber).padStart(2, '0')}</span>
+          <span class="week-phase">${w.phase}</span>
+          <span class="week-stats">
+            <span class="stat"><span class="v">${w.targetHours}</span><span class="k">hr</span></span>
+            <span class="stat"><span class="v">${w.summary.targetWeightKg}</span><span class="k">kg target</span></span>
+          </span>
+        </div>
+        <div class="week-days">${dayCells}</div>
+      </div>`;
+  });
+
+  container.innerHTML = html;
+
+  // Scroll to current week if visible
+  if (wi > 0) {
+    const el = document.getElementById(`week-${wi}`);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 250);
+  }
+}
+
+function showWorkoutDetail(weekNum, dayIdx) {
+  const week = _plan.weeks.find(w => w.weekNumber === weekNum);
+  const day = week.days[dayIdx];
+
+  if (!day.workouts.length) return;
+
+  const dowFull = day.dayOfWeek;
+  const dStr = day.date;
+  document.getElementById('wkModalDate').textContent = `W${weekNum} · ${dowFull.toUpperCase()} · ${dStr}`;
+
+  if (day.workouts[0].sport === 'rest') {
+    document.getElementById('wkModalTitle').textContent = '休息日';
+    document.getElementById('wkModalBody').innerHTML = '<p>主动恢复——散步、拉伸、早睡。</p>';
+    document.getElementById('wkToggleBtn').style.display = 'none';
+  } else {
+    document.getElementById('wkToggleBtn').style.display = 'inline-flex';
+    let body = '';
+    day.workouts.forEach(w => {
+      const sportLbl = w.type === 'strength' ? 'STRENGTH' : (w.sport === 'bike' ? 'STAIR' : (w.type === 'interval' ? 'CARDIO HIIT' : 'CARDIO'));
+      const sportKls = w.type === 'strength' ? 'strength' : (w.sport === 'bike' ? 'stair' : 'cardio');
+      const done = FJH.isWorkoutDone(FJH.loadState(), w.id);
+      body += `
+        <div style="margin-bottom:14px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
+            <span class="workout-tag ${sportKls}">${sportLbl}</span>
+            <span class="mono t-dim" style="font-size:11px">${w.durationMinutes || 0} MIN ${done ? '· ✓' : ''}</span>
+          </div>
+          <div style="font-size:15px;font-weight:600;margin-bottom:8px">${w.name}</div>
+          <pre style="white-space:pre-wrap;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-2);background:var(--bg-input);padding:12px 14px;border:1px solid var(--border);line-height:1.7">${w.humanReadable || w.description || ''}</pre>
+        </div>`;
+    });
+    document.getElementById('wkModalBody').innerHTML = body;
+    _activeWorkoutId = day.workouts[0].id;
+    const allDone = day.workouts.every(w => FJH.isWorkoutDone(FJH.loadState(), w.id));
+    document.getElementById('wkToggleBtn').textContent = allDone ? '取消完成' : '标记完成';
+    _activeWorkouts = day.workouts;
+  }
+
+  document.getElementById('wkModal').classList.add('open');
+}
+
+let _activeWorkouts = [];
+function wkToggle() {
+  const state = FJH.loadState();
+  const allDone = _activeWorkouts.every(w => FJH.isWorkoutDone(state, w.id));
+  _activeWorkouts.forEach(w => {
+    if (allDone) {
+      // un-mark all
+      if (state.completed[w.id]) delete state.completed[w.id];
+    } else {
+      state.completed[w.id] = FJH.todayStr();
+    }
+  });
+  FJH.saveState(state);
+  closeWkModal();
+  renderWeeks();
+}
+
+function closeWkModal() {
+  document.getElementById('wkModal').classList.remove('open');
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeWkModal();
+});
+
+init();
+</script>
+
+</body>
+</html>

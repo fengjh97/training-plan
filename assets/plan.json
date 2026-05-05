@@ -1,0 +1,3226 @@
+{
+  "version": "1.0",
+  "meta": {
+    "id": "weight-loss-fjh-2026-09-06",
+    "athlete": "FJH",
+    "event": "減重 86→65 kg 目標達成",
+    "eventDate": "2026-09-06",
+    "planStartDate": "2026-05-11",
+    "planEndDate": "2026-09-06",
+    "createdAt": "2026-05-05T15:52:08.932Z",
+    "updatedAt": "2026-05-05T15:52:08.932Z",
+    "totalWeeks": 17,
+    "generatedBy": "Claude Coach (adapted for 减脂)"
+  },
+  "preferences": {
+    "swim": "meters",
+    "bike": "kilometers",
+    "run": "kilometers",
+    "firstDayOfWeek": "monday"
+  },
+  "assessment": {
+    "foundation": {
+      "raceHistory": [
+        "过去通过爬坡/爬楼+健身房有氧 1-2 个月减 10kg（脂肪敏感型）"
+      ],
+      "peakTrainingLoad": 10,
+      "foundationLevel": "intermediate",
+      "yearsInSport": 1
+    },
+    "currentForm": {
+      "weeklyVolume": {
+        "total": 3,
+        "swim": 0,
+        "bike": 0,
+        "run": 3
+      },
+      "longestSessions": {
+        "swim": 0,
+        "bike": 0,
+        "run": 60
+      },
+      "consistency": 4
+    },
+    "strengths": [
+      {
+        "sport": "run",
+        "evidence": "有氧机器适应快，爬坡爬楼成功经验"
+      }
+    ],
+    "limiters": [
+      {
+        "sport": "run",
+        "evidence": "膝盖伤史，禁止大重量跑步"
+      }
+    ],
+    "constraints": [
+      "膝盖伤（避免冲击型跑步）",
+      "商业健身房（下班后 19:00-22:00）",
+      "体重高 BMI 28.1 起点"
+    ]
+  },
+  "zones": {
+    "run": {
+      "hr": {
+        "lthr": 165,
+        "zones": [
+          {
+            "zone": 1,
+            "name": "Recovery",
+            "percentLow": 0,
+            "percentHigh": 75,
+            "hrLow": 0,
+            "hrHigh": 124
+          },
+          {
+            "zone": 2,
+            "name": "Aerobic",
+            "percentLow": 75,
+            "percentHigh": 85,
+            "hrLow": 124,
+            "hrHigh": 140
+          },
+          {
+            "zone": 3,
+            "name": "Tempo",
+            "percentLow": 85,
+            "percentHigh": 92,
+            "hrLow": 140,
+            "hrHigh": 152
+          },
+          {
+            "zone": 4,
+            "name": "Threshold",
+            "percentLow": 92,
+            "percentHigh": 98,
+            "hrLow": 152,
+            "hrHigh": 162
+          },
+          {
+            "zone": 5,
+            "name": "VO2max",
+            "percentLow": 98,
+            "percentHigh": 110,
+            "hrLow": 162,
+            "hrHigh": 182
+          }
+        ]
+      }
+    },
+    "bike": {
+      "hr": {
+        "lthr": 160,
+        "zones": [
+          {
+            "zone": 1,
+            "name": "Recovery",
+            "percentLow": 0,
+            "percentHigh": 75,
+            "hrLow": 0,
+            "hrHigh": 120
+          },
+          {
+            "zone": 2,
+            "name": "Aerobic",
+            "percentLow": 75,
+            "percentHigh": 85,
+            "hrLow": 120,
+            "hrHigh": 136
+          },
+          {
+            "zone": 3,
+            "name": "Tempo",
+            "percentLow": 85,
+            "percentHigh": 92,
+            "hrLow": 136,
+            "hrHigh": 147
+          },
+          {
+            "zone": 4,
+            "name": "Threshold",
+            "percentLow": 92,
+            "percentHigh": 100,
+            "hrLow": 147,
+            "hrHigh": 160
+          }
+        ]
+      }
+    }
+  },
+  "phases": [
+    {
+      "name": "Foundation",
+      "startWeek": 1,
+      "endWeek": 4,
+      "focus": "建立训练习惯，启动脂肪代谢，避免一上来就过劳",
+      "weeklyHoursRange": {
+        "low": 8,
+        "high": 10
+      },
+      "keyWorkouts": [
+        "坡度走 60min",
+        "StairMaster 40min",
+        "力量训练 ×2"
+      ],
+      "physiologicalGoals": [
+        "激活有氧基础",
+        "保护肌肉量",
+        "关节适应"
+      ]
+    },
+    {
+      "name": "Push",
+      "startWeek": 5,
+      "endWeek": 8,
+      "focus": "加大有氧时长 + 引入 HIIT 提高代谢",
+      "weeklyHoursRange": {
+        "low": 10,
+        "high": 11
+      },
+      "keyWorkouts": [
+        "坡度走 75-90min",
+        "StairMaster HIIT",
+        "力量 ×2"
+      ],
+      "physiologicalGoals": [
+        "提升 VO2max",
+        "维持瘦体重",
+        "加深热量赤字"
+      ]
+    },
+    {
+      "name": "Diet Break",
+      "startWeek": 9,
+      "endWeek": 9,
+      "focus": "⚠️ 关键周——热量回到维持，给代谢喘口气，防 BMR 崩塌",
+      "weeklyHoursRange": {
+        "low": 7,
+        "high": 8
+      },
+      "keyWorkouts": [
+        "正常训练但减量 30%",
+        "热量恢复到 TDEE"
+      ],
+      "physiologicalGoals": [
+        "leptin 回升",
+        "甲状腺素恢复",
+        "心理喘息"
+      ]
+    },
+    {
+      "name": "Sustain",
+      "startWeek": 10,
+      "endWeek": 13,
+      "focus": "恢复赤字，对抗代谢适应",
+      "weeklyHoursRange": {
+        "low": 10,
+        "high": 12
+      },
+      "keyWorkouts": [
+        "坡度走拉长",
+        "StairMaster + 划船",
+        "力量 ×2"
+      ],
+      "physiologicalGoals": [
+        "打破平台期",
+        "保持瘦体重",
+        "突破 75kg"
+      ]
+    },
+    {
+      "name": "Final Push",
+      "startWeek": 14,
+      "endWeek": 17,
+      "focus": "最后 5kg 最难——加 fasted 晨练，HIIT 频率↑",
+      "weeklyHoursRange": {
+        "low": 11,
+        "high": 13
+      },
+      "keyWorkouts": [
+        "空腹晨走",
+        "高强度间歇 ×2/周",
+        "力量保留"
+      ],
+      "physiologicalGoals": [
+        "极限脂肪燃烧",
+        "保留肌肉到底",
+        "冲 65kg"
+      ]
+    }
+  ],
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "startDate": "2026-05-11",
+      "endDate": "2026-05-17",
+      "phase": "Foundation",
+      "focus": "建立训练习惯，启动脂肪代谢，避免一上来就过劳",
+      "targetHours": 6.7,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-05-11",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w1-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w1-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-12",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w1-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 60min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 50min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 600 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-13",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w1-wed-stair",
+              "sport": "bike",
+              "type": "endurance",
+              "name": "StairMaster 稳态 40min",
+              "description": "中速稳定爬楼，膝盖友好",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 30min @ Level 8-10（步伐稳定，全脚掌踩，不要拽扶手）\nCool-down: 5min @ Level 4\n──燃烧 ≈ 480 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-14",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w1-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w1-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-15",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w1-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 60min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 50min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 540 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-16",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w1-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 90min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 80min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 900 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-17",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w1-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "休息 / 散步 30min",
+              "description": "主动恢复。下班路上多走两站。",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 6.7,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 4.366666666666667,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 84.5
+      }
+    },
+    {
+      "weekNumber": 2,
+      "startDate": "2026-05-18",
+      "endDate": "2026-05-24",
+      "phase": "Foundation",
+      "focus": "建立训练习惯，启动脂肪代谢，避免一上来就过劳",
+      "targetHours": 6.7,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-05-18",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w2-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w2-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-19",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w2-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 60min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 50min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 600 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-20",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w2-wed-stair",
+              "sport": "bike",
+              "type": "endurance",
+              "name": "StairMaster 稳态 40min",
+              "description": "中速稳定爬楼，膝盖友好",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 30min @ Level 8-10（步伐稳定，全脚掌踩，不要拽扶手）\nCool-down: 5min @ Level 4\n──燃烧 ≈ 480 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-21",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w2-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w2-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-22",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w2-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 60min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 50min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 540 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-23",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w2-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 90min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 80min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 900 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-24",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w2-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "休息 / 散步 30min",
+              "description": "主动恢复。下班路上多走两站。",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 6.7,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 4.366666666666667,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 83
+      }
+    },
+    {
+      "weekNumber": 3,
+      "startDate": "2026-05-25",
+      "endDate": "2026-05-31",
+      "phase": "Foundation",
+      "focus": "建立训练习惯，启动脂肪代谢，避免一上来就过劳",
+      "targetHours": 6.7,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-05-25",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w3-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w3-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-26",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w3-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 60min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 50min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 600 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-27",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w3-wed-stair",
+              "sport": "bike",
+              "type": "endurance",
+              "name": "StairMaster 稳态 40min",
+              "description": "中速稳定爬楼，膝盖友好",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 30min @ Level 8-10（步伐稳定，全脚掌踩，不要拽扶手）\nCool-down: 5min @ Level 4\n──燃烧 ≈ 480 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-28",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w3-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w3-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-29",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w3-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 60min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 50min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 540 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-30",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w3-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 90min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 80min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 900 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-05-31",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w3-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "休息 / 散步 30min",
+              "description": "主动恢复。下班路上多走两站。",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 6.7,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 4.366666666666667,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 81.5
+      }
+    },
+    {
+      "weekNumber": 4,
+      "startDate": "2026-06-01",
+      "endDate": "2026-06-07",
+      "phase": "Foundation",
+      "focus": "建立训练习惯，启动脂肪代谢，避免一上来就过劳",
+      "targetHours": 6.7,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-06-01",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w4-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w4-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-02",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w4-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 60min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 50min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 600 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-03",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w4-wed-stair",
+              "sport": "bike",
+              "type": "endurance",
+              "name": "StairMaster 稳态 40min",
+              "description": "中速稳定爬楼，膝盖友好",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 30min @ Level 8-10（步伐稳定，全脚掌踩，不要拽扶手）\nCool-down: 5min @ Level 4\n──燃烧 ≈ 480 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-04",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w4-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w4-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 25min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 15min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 225 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-05",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w4-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 60min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 60,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 50min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 540 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-06",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w4-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 90min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 80min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 900 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-07",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w4-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "休息 / 散步 30min",
+              "description": "主动恢复。下班路上多走两站。",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 6.7,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 4.366666666666667,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 80
+      }
+    },
+    {
+      "weekNumber": 5,
+      "startDate": "2026-06-08",
+      "endDate": "2026-06-14",
+      "phase": "Push",
+      "focus": "加大有氧时长 + 引入 HIIT 提高代谢",
+      "targetHours": 8.4,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-06-08",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w5-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w5-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-09",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w5-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 75min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 65min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 750 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-10",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w5-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-11",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w5-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w5-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-12",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w5-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 75min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 65min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 675 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-13",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w5-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 105min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 105,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 95min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1050 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-14",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w5-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 8.4,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.116666666666666,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 78.8
+      }
+    },
+    {
+      "weekNumber": 6,
+      "startDate": "2026-06-15",
+      "endDate": "2026-06-21",
+      "phase": "Push",
+      "focus": "加大有氧时长 + 引入 HIIT 提高代谢",
+      "targetHours": 8.4,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-06-15",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w6-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w6-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-16",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w6-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 75min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 65min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 750 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-17",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w6-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-18",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w6-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w6-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-19",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w6-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 75min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 65min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 675 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-20",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w6-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 105min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 105,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 95min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1050 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-21",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w6-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 8.4,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.116666666666666,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 77.6
+      }
+    },
+    {
+      "weekNumber": 7,
+      "startDate": "2026-06-22",
+      "endDate": "2026-06-28",
+      "phase": "Push",
+      "focus": "加大有氧时长 + 引入 HIIT 提高代谢",
+      "targetHours": 8.4,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-06-22",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w7-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w7-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-23",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w7-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 75min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 65min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 750 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-24",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w7-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-25",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w7-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w7-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-26",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w7-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 75min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 65min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 675 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-27",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w7-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 105min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 105,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 95min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1050 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-28",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w7-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 8.4,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.116666666666666,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 76.4
+      }
+    },
+    {
+      "weekNumber": 8,
+      "startDate": "2026-06-29",
+      "endDate": "2026-07-05",
+      "phase": "Push",
+      "focus": "加大有氧时长 + 引入 HIIT 提高代谢",
+      "targetHours": 8.4,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-06-29",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w8-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w8-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-06-30",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w8-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 75min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 65min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 750 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-01",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w8-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-02",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w8-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w8-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-03",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w8-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 75min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 75,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 65min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 675 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-04",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w8-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 105min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 105,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 95min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1050 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-05",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w8-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 8.4,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.116666666666666,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 75.2
+      }
+    },
+    {
+      "weekNumber": 9,
+      "startDate": "2026-07-06",
+      "endDate": "2026-07-12",
+      "phase": "Diet Break",
+      "focus": "⚠️ 关键周——热量回到维持，给代谢喘口气，防 BMR 崩塌",
+      "targetHours": 4.3,
+      "isRecoveryWeek": true,
+      "days": [
+        {
+          "date": "2026-07-06",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w9-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-07",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w9-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 50min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 40min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 500 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-08",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w9-wed-stair",
+              "sport": "bike",
+              "type": "endurance",
+              "name": "StairMaster 稳态 35min",
+              "description": "中速稳定爬楼，膝盖友好",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 25min @ Level 8-10（步伐稳定，全脚掌踩，不要拽扶手）\nCool-down: 5min @ Level 4\n──燃烧 ≈ 420 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-09",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w9-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-10",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w9-fri-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "休息 / 散步 30min",
+              "description": "主动恢复。下班路上多走两站。",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-11",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w9-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 70min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 70,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 60min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 700 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-12",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w9-sun-rest",
+              "sport": "rest",
+              "type": "rest",
+              "name": "休息 / 散步 30min",
+              "description": "主动恢复。下班路上多走两站。",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 4.3,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 1.9500000000000002,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 75.2
+      }
+    },
+    {
+      "weekNumber": 10,
+      "startDate": "2026-07-13",
+      "endDate": "2026-07-19",
+      "phase": "Sustain",
+      "focus": "恢复赤字，对抗代谢适应",
+      "targetHours": 9,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-07-13",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w10-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w10-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-14",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w10-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 80min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 70min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 800 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-15",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w10-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-16",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w10-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w10-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-17",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w10-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 80min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 70min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 720 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-18",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w10-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 110min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 110,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 100min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1100 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-19",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w10-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 9,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.7,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 74.2
+      }
+    },
+    {
+      "weekNumber": 11,
+      "startDate": "2026-07-20",
+      "endDate": "2026-07-26",
+      "phase": "Sustain",
+      "focus": "恢复赤字，对抗代谢适应",
+      "targetHours": 9,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-07-20",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w11-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w11-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-21",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w11-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 80min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 70min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 800 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-22",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w11-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-23",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w11-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w11-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-24",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w11-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 80min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 70min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 720 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-25",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w11-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 110min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 110,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 100min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1100 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-26",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w11-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 9,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.7,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 73.2
+      }
+    },
+    {
+      "weekNumber": 12,
+      "startDate": "2026-07-27",
+      "endDate": "2026-08-02",
+      "phase": "Sustain",
+      "focus": "恢复赤字，对抗代谢适应",
+      "targetHours": 9,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-07-27",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w12-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w12-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-28",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w12-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 80min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 70min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 800 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-29",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w12-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-30",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w12-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w12-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-07-31",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w12-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 80min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 70min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 720 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-01",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w12-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 110min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 110,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 100min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1100 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-02",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w12-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 9,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.7,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 72.2
+      }
+    },
+    {
+      "weekNumber": 13,
+      "startDate": "2026-08-03",
+      "endDate": "2026-08-09",
+      "phase": "Sustain",
+      "focus": "恢复赤字，对抗代谢适应",
+      "targetHours": 9,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-08-03",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w13-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w13-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-04",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w13-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 80min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 70min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 800 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-05",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w13-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 50min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 650 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-06",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w13-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w13-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 35min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 35,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 25min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 315 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-07",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w13-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 80min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 80,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 70min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 720 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-08",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w13-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 110min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 110,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 100min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1100 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-09",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w13-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 9,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 6.7,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 71.2
+      }
+    },
+    {
+      "weekNumber": 14,
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-16",
+      "phase": "Final Push",
+      "focus": "最后 5kg 最难——加 fasted 晨练，HIIT 频率↑",
+      "targetHours": 9.8,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-08-10",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w14-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w14-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-11",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w14-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 90min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 80min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 900 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-12",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w14-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 55min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 55,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 715 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-13",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w14-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w14-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-14",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w14-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 90min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 80min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 810 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-15",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w14-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 120min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 120,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 110min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1200 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-16",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w14-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 9.8,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 7.450000000000002,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 69.7
+      }
+    },
+    {
+      "weekNumber": 15,
+      "startDate": "2026-08-17",
+      "endDate": "2026-08-23",
+      "phase": "Final Push",
+      "focus": "最后 5kg 最难——加 fasted 晨练，HIIT 频率↑",
+      "targetHours": 9.8,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-08-17",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w15-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w15-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-18",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w15-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 90min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 80min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 900 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-19",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w15-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 55min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 55,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 715 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-20",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w15-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w15-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-21",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w15-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 90min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 90,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 80min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 810 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-22",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w15-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 120min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 120,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 110min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1200 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-23",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w15-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 9.8,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 7.450000000000002,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 68.1
+      }
+    },
+    {
+      "weekNumber": 16,
+      "startDate": "2026-08-24",
+      "endDate": "2026-08-30",
+      "phase": "Final Push",
+      "focus": "最后 5kg 最难——加 fasted 晨练，HIIT 频率↑",
+      "targetHours": 11,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-08-24",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w16-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w16-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-25",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w16-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 95min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 95,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 85min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 950 kcal",
+              "completed": false
+            },
+            {
+              "id": "w16-tue-stair",
+              "sport": "bike",
+              "type": "endurance",
+              "name": "StairMaster 稳态 25min",
+              "description": "中速稳定爬楼，膝盖友好",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 15min @ Level 8-10（步伐稳定，全脚掌踩，不要拽扶手）\nCool-down: 5min @ Level 4\n──燃烧 ≈ 300 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-26",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w16-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 55min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 55,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 715 kcal",
+              "completed": false
+            },
+            {
+              "id": "w16-wed-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-27",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w16-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w16-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-28",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w16-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 70min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 70,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 60min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 630 kcal",
+              "completed": false
+            },
+            {
+              "id": "w16-fri-row",
+              "sport": "run",
+              "type": "endurance",
+              "name": "划船机 25min",
+              "description": "全身后侧链强化 + 高 kcal 燃烧",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min slow stroke\nMain: 15min @ 22-26 spm，每 5min 1 次 30s 加速\nCool-down: 5min slow stroke\n──燃烧 ≈ 300 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-29",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w16-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 130min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 130,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 120min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1300 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-08-30",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w16-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 11,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 8.7,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 66.6
+      }
+    },
+    {
+      "weekNumber": 17,
+      "startDate": "2026-08-31",
+      "endDate": "2026-09-06",
+      "phase": "Final Push",
+      "focus": "最后 5kg 最难——加 fasted 晨练，HIIT 频率↑",
+      "targetHours": 11,
+      "isRecoveryWeek": false,
+      "days": [
+        {
+          "date": "2026-08-31",
+          "dayOfWeek": "Monday",
+          "workouts": [
+            {
+              "id": "w17-mon-str-lo",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 A · 下肢（膝盖友好）",
+              "description": "保护肌肉的关键。深度赤字下不练力量必掉肌肉。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 椭圆机 5min + 动态拉伸 5min\nMain:\n  ① 腿举 Leg Press 4×10 @ 中等重量（膝盖只到 90 度，不要更深）\n  ② 罗马尼亚硬拉 RDL 3×10 @ 中等\n  ③ 髋桥 / 臀桥 Hip Thrust 3×12\n  ④ 腿弯举 Leg Curl 3×12\n  ⑤ 站立提踵 Calf Raise 3×15\n  ⑥ 平板支撑 Plank 3×60s\nCool-down: 静态拉伸 10min",
+              "completed": false
+            },
+            {
+              "id": "w17-mon-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-01",
+          "dayOfWeek": "Tuesday",
+          "workouts": [
+            {
+              "id": "w17-tue-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 95min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 95,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 85min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 950 kcal",
+              "completed": false
+            },
+            {
+              "id": "w17-tue-stair",
+              "sport": "bike",
+              "type": "endurance",
+              "name": "StairMaster 稳态 25min",
+              "description": "中速稳定爬楼，膝盖友好",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 15min @ Level 8-10（步伐稳定，全脚掌踩，不要拽扶手）\nCool-down: 5min @ Level 4\n──燃烧 ≈ 300 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-02",
+          "dayOfWeek": "Wednesday",
+          "workouts": [
+            {
+              "id": "w17-wed-stair",
+              "sport": "bike",
+              "type": "interval",
+              "name": "StairMaster 间歇 55min",
+              "description": "阶梯节奏间歇：30s 快 + 90s 慢 ×12",
+              "durationMinutes": 55,
+              "primaryZone": "Zone 4",
+              "humanReadable": "Warm-up: 5min @ Level 6\nMain: 12 × (30s @ Level 11-12 + 90s @ Level 6)\nCool-down: 5min @ Level 4\n──燃烧 ≈ 715 kcal",
+              "completed": false
+            },
+            {
+              "id": "w17-wed-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 30min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 30,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 20min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 270 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-03",
+          "dayOfWeek": "Thursday",
+          "workouts": [
+            {
+              "id": "w17-thu-str-up",
+              "sport": "swim",
+              "type": "strength",
+              "name": "力量训练 B · 上肢",
+              "description": "上肢肌肉量保留，提高静息代谢。",
+              "durationMinutes": 50,
+              "humanReadable": "Warm-up: 划船机 5min + 肩部环绕\nMain:\n  ① 杠铃卧推 Bench Press 4×8\n  ② 坐姿划船 Seated Row 4×10\n  ③ 肩推 Shoulder Press 3×10\n  ④ 高位下拉 Lat Pulldown 3×10\n  ⑤ 二头弯举 Curl 3×12\n  ⑥ 三头下压 Tricep Pushdown 3×12\nCool-down: 拉伸 8min",
+              "completed": false
+            },
+            {
+              "id": "w17-thu-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 40min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 40,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 30min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 360 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-04",
+          "dayOfWeek": "Friday",
+          "workouts": [
+            {
+              "id": "w17-fri-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 70min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 70,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 60min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 630 kcal",
+              "completed": false
+            },
+            {
+              "id": "w17-fri-row",
+              "sport": "run",
+              "type": "endurance",
+              "name": "划船机 25min",
+              "description": "全身后侧链强化 + 高 kcal 燃烧",
+              "durationMinutes": 25,
+              "primaryZone": "Zone 2-3",
+              "humanReadable": "Warm-up: 5min slow stroke\nMain: 15min @ 22-26 spm，每 5min 1 次 30s 加速\nCool-down: 5min slow stroke\n──燃烧 ≈ 300 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-05",
+          "dayOfWeek": "Saturday",
+          "workouts": [
+            {
+              "id": "w17-sat-incline",
+              "sport": "run",
+              "type": "endurance",
+              "name": "跑步机坡度走 130min",
+              "description": "稳定有氧，目标 zone 2 心率",
+              "durationMinutes": 130,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ 5% 5km/h\nMain: 120min @ 12% 5.5km/h（呼吸能说话不能唱歌）\nCool-down: 5min @ 3% 4km/h\n──燃烧 ≈ 1300 kcal",
+              "completed": false
+            }
+          ]
+        },
+        {
+          "date": "2026-09-06",
+          "dayOfWeek": "Sunday",
+          "workouts": [
+            {
+              "id": "w17-sun-ellip",
+              "sport": "run",
+              "type": "endurance",
+              "name": "椭圆机稳态 50min",
+              "description": "零冲击全身有氧，关节恢复日",
+              "durationMinutes": 50,
+              "primaryZone": "Zone 2",
+              "humanReadable": "Warm-up: 5min @ Resistance 5\nMain: 40min @ Resistance 8-10（手臂全程拉推，使用上肢）\nCool-down: 5min @ Resistance 3\n──燃烧 ≈ 450 kcal",
+              "completed": false
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "totalHours": 11,
+        "bySport": {
+          "swim": {
+            "sessions": 2,
+            "hours": 1.6,
+            "km": 0
+          },
+          "bike": {
+            "sessions": 1,
+            "hours": 0.7,
+            "km": 0
+          },
+          "run": {
+            "sessions": 4,
+            "hours": 8.7,
+            "km": 0
+          }
+        },
+        "targetWeightKg": 65
+      }
+    }
+  ],
+  "raceStrategy": {
+    "event": {
+      "name": "減重達成 65 kg",
+      "date": "2026-09-06",
+      "type": "weight-loss",
+      "distances": {
+        "swim": 0,
+        "bike": 0,
+        "run": 0
+      }
+    },
+    "pacing": {
+      "run": {
+        "target": "坡度 12% / 5.5 km/h",
+        "notes": "心率 zone 2 上限不破，能聊天但不能唱歌"
+      },
+      "bike": {
+        "target": "StairMaster Level 8-10",
+        "notes": "不拽扶手，全脚掌踩踏"
+      },
+      "swim": {
+        "target": "力量训练 中等重量 8-12 reps",
+        "notes": "深度赤字下肌肉保护是第一要务"
+      }
+    },
+    "nutrition": {
+      "preRace": "日常每日热量目标：1700 kcal / Protein 160g / Fat 50g / Carb 150g（详见 weight-loss-diet.md）",
+      "during": {
+        "carbsPerHour": 0,
+        "fluidPerHour": "500ml",
+        "products": []
+      },
+      "notes": "减脂 70% 靠饮食。详细策略见 ~/coach-plans/weight-loss-diet.md"
+    },
+    "taper": {
+      "startDate": "2026-08-30",
+      "volumeReduction": 30,
+      "notes": "最后一周保留强度但减量，称重前一日少盐少水正常吃饭"
+    }
+  }
+}
