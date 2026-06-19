@@ -41,6 +41,9 @@ body{
 .hero h2{font-size:23px;font-weight:700;margin:7px 0 2px;line-height:1.2}
 .hero .focus{font-size:13px;color:var(--ink2);font-weight:500}
 .hero .slogan{margin-top:11px;font-size:15px;font-weight:600;color:var(--fur-d);background:#fff;border:2px dashed #ffce85;border-radius:14px;padding:8px 12px;text-align:center;position:relative;z-index:1}
+.daytip{display:flex;gap:9px;background:#fff;border:2px solid #ffe0b0;border-left:5px solid var(--fur);border-radius:14px;padding:10px 13px;margin-top:13px;font-size:12.5px;color:var(--ink2);line-height:1.55}
+.daytip .ti{font-size:16px;flex-shrink:0}
+.daytip.rec{border-color:#cfe6b8;border-left-color:#9ab86a}
 .prog{display:flex;align-items:center;gap:10px;margin:16px 2px 6px}
 .prog .bar{flex:1;height:14px;background:#ffe6c2;border-radius:999px;overflow:hidden;border:1.5px solid #ffd89a}
 .prog .fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--green-d));border-radius:999px;transition:width .5s cubic-bezier(.34,1.56,.64,1)}
@@ -116,19 +119,20 @@ body{
       </div>
       <div class="slogan" id="heroSlogan"></div>
     </div>
+    <div class="daytip" id="dayTip"><span class="ti">🐹</span><span id="dayTipTxt"></span></div>
     <div class="prog">
       <div class="bar"><div class="fill" id="progFill"></div></div>
       <div class="pct" id="progPct">0/0</div>
     </div>
     <div class="lab">今日菜单 · 点一下打勾</div>
     <div id="itemList"></div>
-    <div class="foot">第6版定稿 · 高有氧刷脂 + 胸优先力量<br>身体投反对票时,听身体 🌿</div>
+    <div class="foot">新版周计划 · 铁三 BASE · 一三六骑跑 · 二四划船爬坡<br>身体投反对票时,听身体 🌿</div>
   </div>
 
   <div class="page" id="page-week">
     <div class="lab" style="margin-top:6px">本周计划 / The Week</div>
     <div id="weekList"></div>
-    <div class="ref" style="margin-top:6px"><h3>🧠 一句话</h3><div class="tip">一肩 · 二胸 · 三背肩 · 四胸 · 五轻恢复 · 六 brick · 日三大项。胸隔天排(二/四/日)无连轰;有氧不因力量减量;力量分散小剂量塞进有氧日,容量向胸倾斜。</div></div>
+    <div class="ref" style="margin-top:6px"><h3>🧠 一句话</h3><div class="tip">一:轻骑跑+肩 · 二:划船爬坡+完整背 · 三:中等骑跑+俯卧撑肩 · 四:划船爬坡+背减量 · 五:轻居家恢复 · 六:骑90+跑5-8 大brick · 日:爬坡+上肢保肌。<br><b style="color:var(--fur-d)">核心纪律:周一轻、周三中、周六重;周二完整背、周四减量背、周日看状态。</b>骑跑给一三六,划船爬坡给二四,力量穿插不抢有氧主菜。</div></div>
   </div>
 
   <div class="page" id="page-ref">
@@ -152,12 +156,13 @@ body{
       </div>
       <div class="tip">Z2 目标 145-154(easy 都压这);LSD 145-158。说话测试:能说整句=Z2。乳酸阈 LTHR 177。热/无风顶高 HR,别死盯数字。</div>
     </div>
-    <div class="ref"><h3>🔥 周六 brick 大课</h3>
+    <div class="ref"><h3>🔥 周六 周峰大 brick</h3>
       <table><tr><th>段</th><th>量</th><th>强度</th></tr>
-      <tr><td>① 划船</td><td>45min</td><td>130-140W·桨频18-22</td></tr>
-      <tr><td>② 骑行</td><td>60min</td><td>Z2·110-130W</td></tr>
-      <tr><td>③ 跑步</td><td>10km</td><td>brick核心</td></tr></table>
-      <div class="tip">前面别上头,压住划/骑,<b>最后10km累腿上跑才是核心</b>(铁三专项)。带宝矿力+香蕉。</div>
+      <tr><td>① 划船(可选热身)</td><td>0-25min</td><td>Z1-Z2</td></tr>
+      <tr><td>② 骑行(主菜)</td><td>90min</td><td>Z2</td></tr>
+      <tr><td>③ 跑步(核心)</td><td>5-8km</td><td>brick 专项</td></tr>
+      <tr><td>侧平举</td><td>2-3组</td><td>轻泵·可选</td></tr></table>
+      <div class="tip">骑90是主菜、<b>最后5-8km累腿上跑才是核心</b>。状态特好可划25+骑90+跑8;<b>别每周都搞成划45+骑90+跑10</b>——太满会拖累周日和下周。带宝矿力+香蕉。</div>
     </div>
     <div class="ref"><h3>🚦 每日自调节</h3>
       <div class="tip">这套是"默认",晨间数据是"覆盖"。<b>晨HRV崩/准备度LOW/出症状</b>→降级:easy短/纯划船/直接歇。红灯先砍力量+周五直接纯躺。周日紧跟brick,累就只爬坡砍三大项。<b>看趋势(腰围/HRV曲线)不看单点。6月恢复变脆→宁可巩固别加量。</b></div>
@@ -181,40 +186,42 @@ body{
 <script>
 const A="assets/anim/";
 const DAYS={
- 1:{t:"划船 + 跑步 + 肩",f:"有氧 + 肩",cat:"aero",items:[
-   {k:"rowing_erg",n:"划船机",c:"aero",s:"有氧热身 · Z2",note:"130-140W 桨频18-22"},
-   {k:"running",n:"跑步 5km",c:"aero",s:"Z2 145-154",note:"说话测试:能说整句"},
-   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:"3kg起·泵感·不耸肩借力"},
+ 1:{t:"轻骑跑 + 肩",f:"轻 mini brick",cat:"aero",tip:"周一不硬。周六大课 + 周日爬坡之后的『重新接上节奏日』,目标只是让身体习惯骑完还能跑。",items:[
+   {k:"cycling",n:"骑行",c:"aero",s:"45-60min · Z2下半区",note:"easy·重新接节奏"},
+   {k:"running",n:"下车跑",c:"aero",s:"3-5km · easy",note:"不追配速"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:"3kg起·泵感·不借力"},
  ]},
- 2:{t:"爬楼 + 胸",f:"有氧 + 胸",cat:"aero",items:[
-   {k:"stairs",n:"爬楼",c:"aero",s:"有氧 · Z2",note:"稳态刷脂"},
-   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",note:"路线 10×5→10×6→10×8"},
-   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3-4 × 10-15",note:"补上胸容量"},
+ 2:{t:"划船爬坡 + 完整背",f:"低冲击容量 + 背",cat:"aero",tip:"背部主训练日。但划船机已吃背和核心,力量留 1-2 余力别力竭。",items:[
+   {k:"rowing_erg",n:"划船机",c:"aero",s:"40-60min · Z2",note:""},
+   {k:"incline_walk",n:"爬坡",c:"aero",s:"30-45min · Z2",note:"低冲击刷容量"},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"4 × 8-12",note:"背主训·留1-2余力"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"4 × 8-12",note:"中背厚度"},
  ]},
- 3:{t:"爬坡 + 背 + 肩",f:"有氧 + 背 + 肩",cat:"aero",items:[
-   {k:"incline_walk",n:"爬坡",c:"aero",s:"有氧 · Z2",note:"压住别上强度"},
-   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3-4 × 8-12",note:"背阔·宽握·留1-2余力"},
-   {k:"seated_row",n:"坐姿划船",c:"str",s:"3-4 × 8-12",note:"中背厚度"},
-   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:"逐周加到4-5kg"},
- ]},
- 4:{t:"划船 + 跑步 + 胸",f:"有氧 + 胸",cat:"aero",items:[
-   {k:"rowing_erg",n:"划船机",c:"aero",s:"有氧热身",note:"130-140W"},
-   {k:"running",n:"跑步 5km",c:"aero",s:"Z2 145-154",note:""},
-   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",note:"隔天排·容量加大"},
-   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3-4 × 10-15",note:""},
- ]},
- 5:{t:"轻居家恢复",f:"主动恢复 · 不是加练",cat:"rec",items:[
-   {k:"pushup",n:"俯卧撑(留余力)",c:"rec",s:"几组 · 留3-4余力",note:"绝不力竭·submaximal"},
-   {k:"lateral_raise",n:"侧平举(轻)",c:"rec",s:"轻量几组",note:"~10-15min 促血流"},
- ]},
- 6:{t:"LSD / brick 大课",f:"大有氧 + 肩 · 周峰",cat:"aero",items:[
-   {k:"rowing_erg",n:"划船",c:"aero",s:"45 min",note:"130-140W 桨频18-22"},
-   {k:"cycling",n:"骑行",c:"aero",s:"60 min",note:"Z2 ~110-130W"},
-   {k:"running",n:"跑步 10km",c:"aero",s:"brick 核心",note:"累腿上跑=铁三专项"},
+ 3:{t:"中等骑跑 + 推肩",f:"正式 mini brick",cat:"aero",tip:"可比周一认真点——一周里第二重要的骑跑专项日,仅次于周六。",items:[
+   {k:"cycling",n:"骑行",c:"aero",s:"60-75min · Z2",note:"专项主课"},
+   {k:"running",n:"跑步",c:"aero",s:"5km · easy~Z2上沿",note:""},
+   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",note:"路线 10×5→10×8"},
+   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3 × 10-15",note:"补上胸"},
    {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:""},
  ]},
- 0:{t:"爬坡 + 三大项(上肢)",f:"有氧 + 推拉",cat:"aero",items:[
-   {k:"incline_walk",n:"爬坡",c:"aero",s:"有氧 · Z2",note:"post-brick 不碰腿"},
+ 4:{t:"划船爬坡 + 背减量",f:"有氧容量 + 背维护",cat:"aero",tip:"别练成完整背日。周二已练背、周六会划、周日还有拉——周四是维护不是轰炸。",items:[
+   {k:"rowing_erg",n:"划船机",c:"aero",s:"30-45min",note:""},
+   {k:"incline_walk",n:"爬坡",c:"aero",s:"45-60min",note:""},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3 × 8-12",note:"减量"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"2-3 × 8-12",note:"维护·不轰炸"},
+ ]},
+ 5:{t:"轻居家恢复",f:"主动恢复 · 不是真训练",cat:"rec",tip:"卡死:10-15min 结束,不力竭、不练腿、不练核心。促血流保习惯,不是制造刺激。",items:[
+   {k:"pushup",n:"俯卧撑(留余力)",c:"rec",s:"几组 · 留3-4余力",note:"绝不力竭"},
+   {k:"lateral_raise",n:"侧平举(轻)",c:"rec",s:"轻量泵感",note:"~10-15min 促血流"},
+ ]},
+ 6:{t:"周峰大 brick",f:"骑90 + 跑5-8km · 周峰",cat:"aero",tip:"骑90是主菜、最后5-8km跑是核心。别每周搞成划45+骑90+跑10,太满会拖累周日和下周。",items:[
+   {k:"rowing_erg",n:"划船(热身)",c:"aero",s:"0-25min · Z1-Z2",note:"可选热身"},
+   {k:"cycling",n:"骑行",c:"aero",s:"90min · Z2",note:"主菜·压住别上头"},
+   {k:"running",n:"跑步",c:"aero",s:"5-8km",note:"brick 核心·累腿上跑"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"2-3组轻泵",note:"可做可不做"},
+ ]},
+ 0:{t:"爬坡 + 上肢三大项",f:"上肢保肌",cat:"aero",tip:"紧跟周六:状态好全做;一般→砍划船;HRV崩/腿沉/睡差→只爬坡,力量全砍。不碰腿。",items:[
+   {k:"incline_walk",n:"爬坡",c:"aero",s:"45-75min · Z2",note:"不跑不冲·不碰腿"},
    {k:"chest_press",n:"器械推胸",c:"str",s:"3 × 8-12",note:"稳控别冲极限"},
    {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3-4 × 8-12",note:"背阔"},
    {k:"seated_row",n:"坐姿划船",c:"str",s:"3-4 × 8-12",note:"中背厚度"},
@@ -239,6 +246,9 @@ function render(){
   document.getElementById("dayFocus").textContent=isRec?"今天慢下来,主动恢复":"专注 · 一项一项来";
   setSprite(document.getElementById("heroSprite"), isRec?"gentle":"hype");
   document.getElementById("heroSlogan").textContent=isRec?"今天不硬刚,舒服动一动就好 🌿":SLOGAN_PRE[d.getDate()%SLOGAN_PRE.length];
+  const tip=document.getElementById("dayTip");
+  if(plan.tip){tip.style.display="flex";tip.className="daytip"+(isRec?" rec":"");document.getElementById("dayTipTxt").textContent=plan.tip;}
+  else{tip.style.display="none";}
   const list=document.getElementById("itemList");list.innerHTML="";
   plan.items.forEach((it,i)=>{
     const done=!!state[i];

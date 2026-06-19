@@ -1,5 +1,5 @@
 // 仓鼠教练 PWA service worker — 离线缓存
-const CACHE = "cangshu-coach-v1";
+const CACHE = "cangshu-coach-v2";
 const ASSETS = ["./", "./index.html", "./manifest.json"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
