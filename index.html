@@ -41,6 +41,19 @@ body{
 .hero h2{font-size:23px;font-weight:700;margin:7px 0 2px;line-height:1.2}
 .hero .focus{font-size:13px;color:var(--ink2);font-weight:500}
 .hero .slogan{margin-top:11px;font-size:15px;font-weight:600;color:var(--fur-d);background:#fff;border:2px dashed #ffce85;border-radius:14px;padding:8px 12px;text-align:center;position:relative;z-index:1}
+.daysel{display:flex;gap:5px;margin:14px 0 2px}
+.daysel button{flex:1;background:#fff;border:2px solid var(--line);font-family:inherit;font-weight:700;font-size:14px;color:var(--ink2);padding:9px 0 7px;border-radius:13px;position:relative;transition:.15s}
+.daysel button .wd{font-size:9px;font-weight:600;color:var(--faint);display:block;margin-top:1px}
+.daysel button.on{background:var(--fur);border-color:var(--fur-d);color:#fff}
+.daysel button.on .wd{color:#fff8e8}
+.daysel button.is-today::after{content:"";position:absolute;top:5px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--red)}
+.daysel button.on.is-today::after{background:#fff}
+.wt{display:inline-block;font-size:11px;font-weight:700;color:var(--fur-d);background:#fff1d6;border:1px solid #ffd89a;border-radius:6px;padding:0 6px;margin-left:5px;vertical-align:middle}
+.previewbar{display:flex;align-items:center;gap:8px;background:#eef4fb;border:2px solid #cfe1f5;border-radius:13px;padding:9px 13px;margin:16px 2px 6px;font-size:12.5px;color:#3f6da3;font-weight:600}
+.previewbar b{color:#2a5a8c}
+.previewbar button{margin-left:auto;background:var(--blue);color:#fff;border:none;font-family:inherit;font-weight:600;font-size:12px;padding:5px 12px;border-radius:999px}
+.item.preview{cursor:default}
+.item.preview .chk{display:none}
 .daytip{display:flex;gap:9px;background:#fff;border:2px solid #ffe0b0;border-left:5px solid var(--fur);border-radius:14px;padding:10px 13px;margin-top:13px;font-size:12.5px;color:var(--ink2);line-height:1.55}
 .daytip .ti{font-size:16px;flex-shrink:0}
 .daytip.rec{border-color:#cfe6b8;border-left-color:#9ab86a}
@@ -108,6 +121,7 @@ body{
   </div>
 
   <div class="page on" id="page-today">
+    <div class="daysel" id="daySel"></div>
     <div class="hero">
       <div class="mood">
         <div class="sprite anim" id="heroSprite"></div>
@@ -120,11 +134,12 @@ body{
       <div class="slogan" id="heroSlogan"></div>
     </div>
     <div class="daytip" id="dayTip"><span class="ti">🐹</span><span id="dayTipTxt"></span></div>
-    <div class="prog">
+    <div class="prog" id="progRow">
       <div class="bar"><div class="fill" id="progFill"></div></div>
       <div class="pct" id="progPct">0/0</div>
     </div>
-    <div class="lab">今日菜单 · 点一下打勾</div>
+    <div class="previewbar" id="previewBar" style="display:none">👀 <span id="previewTxt"></span><button id="backToday">回到今天</button></div>
+    <div class="lab" id="menuLab">今日菜单 · 点一下打勾</div>
     <div id="itemList"></div>
     <div class="foot">新版周计划 · 铁三 BASE · 一三六骑跑 · 二四划船爬坡<br>身体投反对票时,听身体 🌿</div>
   </div>
@@ -189,42 +204,42 @@ const DAYS={
  1:{t:"轻骑跑 + 肩",f:"轻 mini brick",cat:"aero",tip:"周一不硬。周六大课 + 周日爬坡之后的『重新接上节奏日』,目标只是让身体习惯骑完还能跑。",items:[
    {k:"cycling",n:"骑行",c:"aero",s:"45-60min · Z2下半区",note:"easy·重新接节奏"},
    {k:"running",n:"下车跑",c:"aero",s:"3-5km · easy",note:"不追配速"},
-   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:"3kg起·泵感·不借力"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",w:"3kg",note:"泵感·不借力"},
  ]},
  2:{t:"划船爬坡 + 完整背",f:"低冲击容量 + 背",cat:"aero",tip:"背部主训练日。但划船机已吃背和核心,力量留 1-2 余力别力竭。",items:[
    {k:"rowing_erg",n:"划船机",c:"aero",s:"40-60min · Z2",note:""},
    {k:"incline_walk",n:"爬坡",c:"aero",s:"30-45min · Z2",note:"低冲击刷容量"},
-   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"4 × 8-12",note:"背主训·留1-2余力"},
-   {k:"seated_row",n:"坐姿划船",c:"str",s:"4 × 8-12",note:"中背厚度"},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"4 × 8-12",w:"35kg",note:"背主训·留1-2余力"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"4 × 8-12",w:"单臂15-20kg",note:"中背厚度"},
  ]},
  3:{t:"中等骑跑 + 推肩",f:"正式 mini brick",cat:"aero",tip:"可比周一认真点——一周里第二重要的骑跑专项日,仅次于周六。",items:[
    {k:"cycling",n:"骑行",c:"aero",s:"60-75min · Z2",note:"专项主课"},
    {k:"running",n:"跑步",c:"aero",s:"5km · easy~Z2上沿",note:""},
-   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",note:"路线 10×5→10×8"},
-   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3 × 10-15",note:"补上胸"},
-   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:""},
+   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",w:"自重",note:"路线 10×5→10×8"},
+   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3 × 10-15",w:"自重",note:"补上胸"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",w:"3kg",note:""},
  ]},
  4:{t:"划船爬坡 + 背减量",f:"有氧容量 + 背维护",cat:"aero",tip:"别练成完整背日。周二已练背、周六会划、周日还有拉——周四是维护不是轰炸。",items:[
    {k:"rowing_erg",n:"划船机",c:"aero",s:"30-45min",note:""},
    {k:"incline_walk",n:"爬坡",c:"aero",s:"45-60min",note:""},
-   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3 × 8-12",note:"减量"},
-   {k:"seated_row",n:"坐姿划船",c:"str",s:"2-3 × 8-12",note:"维护·不轰炸"},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3 × 8-12",w:"35kg",note:"减量"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"2-3 × 8-12",w:"单臂15-20kg",note:"维护·不轰炸"},
  ]},
  5:{t:"轻居家恢复",f:"主动恢复 · 不是真训练",cat:"rec",tip:"卡死:10-15min 结束,不力竭、不练腿、不练核心。促血流保习惯,不是制造刺激。",items:[
-   {k:"pushup",n:"俯卧撑(留余力)",c:"rec",s:"几组 · 留3-4余力",note:"绝不力竭"},
-   {k:"lateral_raise",n:"侧平举(轻)",c:"rec",s:"轻量泵感",note:"~10-15min 促血流"},
+   {k:"pushup",n:"俯卧撑(留余力)",c:"rec",s:"几组 · 留3-4余力",w:"自重",note:"绝不力竭"},
+   {k:"lateral_raise",n:"侧平举(轻)",c:"rec",s:"轻量泵感",w:"轻",note:"~10-15min 促血流"},
  ]},
  6:{t:"周峰大 brick",f:"骑90 + 跑5-8km · 周峰",cat:"aero",tip:"骑90是主菜、最后5-8km跑是核心。别每周搞成划45+骑90+跑10,太满会拖累周日和下周。",items:[
    {k:"rowing_erg",n:"划船(热身)",c:"aero",s:"0-25min · Z1-Z2",note:"可选热身"},
    {k:"cycling",n:"骑行",c:"aero",s:"90min · Z2",note:"主菜·压住别上头"},
    {k:"running",n:"跑步",c:"aero",s:"5-8km",note:"brick 核心·累腿上跑"},
-   {k:"lateral_raise",n:"侧平举",c:"str",s:"2-3组轻泵",note:"可做可不做"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"2-3组轻泵",w:"轻",note:"可做可不做"},
  ]},
  0:{t:"爬坡 + 上肢三大项",f:"上肢保肌",cat:"aero",tip:"紧跟周六:状态好全做;一般→砍划船;HRV崩/腿沉/睡差→只爬坡,力量全砍。不碰腿。",items:[
    {k:"incline_walk",n:"爬坡",c:"aero",s:"45-75min · Z2",note:"不跑不冲·不碰腿"},
-   {k:"chest_press",n:"器械推胸",c:"str",s:"3 × 8-12",note:"稳控别冲极限"},
-   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3-4 × 8-12",note:"背阔"},
-   {k:"seated_row",n:"坐姿划船",c:"str",s:"3-4 × 8-12",note:"中背厚度"},
+   {k:"chest_press",n:"器械推胸",c:"str",s:"3 × 8-12",w:"30-40kg",note:"稳控别冲极限"},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3-4 × 8-12",w:"35kg",note:"背阔"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"3-4 × 8-12",w:"单臂15-20kg",note:"中背厚度"},
  ]},
 };
 const SLOGAN_PRE=["今天也要冲鸭!🔥","加油加油,你最强!💪","动起来,小宇宙爆发!⚡","就是现在,练它!🐹🔥","能量满格,出发!🚀"];
@@ -237,35 +252,57 @@ function save(s){localStorage.setItem(key(),JSON.stringify(s))}
 function setSprite(el,k){el.style.backgroundImage="url('"+A+k+".jpg')";}
 
 let state=load();
+const realDow=new Date().getDay();
+let viewDow=realDow;
+function buildDaySel(){
+  const sel=document.getElementById("daySel");sel.innerHTML="";
+  [1,2,3,4,5,6,0].forEach(i=>{
+    const b=document.createElement("button");
+    b.className=(i===viewDow?"on ":"")+(i===realDow?"is-today":"");
+    const sub=DAYS[i].cat==="rec"?"恢复":(DAYS[i].t.indexOf("brick")>=0?"brick":"训练");
+    b.innerHTML=`周${WD[i]}<span class="wd">${sub}</span>`;
+    b.onclick=()=>{viewDow=i;render();window.scrollTo(0,0);};
+    sel.appendChild(b);
+  });
+}
 function render(){
-  const d=new Date(), dow=d.getDay(), plan=DAYS[dow];
-  document.getElementById("dateline").textContent=`${d.getMonth()+1}月${d.getDate()}日 · 周${WD[dow]}`;
-  document.getElementById("dayTag").textContent="周"+WD[dow]+" · "+plan.f;
+  const d=new Date(), plan=DAYS[viewDow], isToday=viewDow===realDow;
+  buildDaySel();
+  document.getElementById("dateline").textContent=isToday?`${d.getMonth()+1}月${d.getDate()}日 · 周${WD[realDow]}`:`查看 · 周${WD[viewDow]}`;
+  document.getElementById("dayTag").textContent="周"+WD[viewDow]+" · "+plan.f;
   document.getElementById("dayTitle").textContent=plan.t;
   const isRec=plan.cat==="rec";
-  document.getElementById("dayFocus").textContent=isRec?"今天慢下来,主动恢复":"专注 · 一项一项来";
+  document.getElementById("dayFocus").textContent=isRec?"慢下来,主动恢复":"专注 · 一项一项来";
   setSprite(document.getElementById("heroSprite"), isRec?"gentle":"hype");
-  document.getElementById("heroSlogan").textContent=isRec?"今天不硬刚,舒服动一动就好 🌿":SLOGAN_PRE[d.getDate()%SLOGAN_PRE.length];
+  document.getElementById("heroSlogan").textContent=isRec?"不硬刚,舒服动一动就好 🌿":SLOGAN_PRE[viewDow%SLOGAN_PRE.length];
   const tip=document.getElementById("dayTip");
   if(plan.tip){tip.style.display="flex";tip.className="daytip"+(isRec?" rec":"");document.getElementById("dayTipTxt").textContent=plan.tip;}
   else{tip.style.display="none";}
+  document.getElementById("progRow").style.display=isToday?"flex":"none";
+  document.getElementById("previewBar").style.display=isToday?"none":"flex";
+  if(!isToday)document.getElementById("previewTxt").textContent=`预览 周${WD[viewDow]} 菜单(非今日,不可打勾)`;
+  document.getElementById("menuLab").textContent=isToday?"今日菜单 · 点一下打勾":"周"+WD[viewDow]+"菜单 · 预览";
   const list=document.getElementById("itemList");list.innerHTML="";
   plan.items.forEach((it,i)=>{
-    const done=!!state[i];
-    const el=document.createElement("div");el.className="item"+(done?" done":"");
+    const done=isToday&&!!state[i];
+    const el=document.createElement("div");el.className="item"+(done?" done":"")+(isToday?"":" preview");
+    const wt=it.w?` <span class="wt">${it.w}</span>`:"";
     el.innerHTML=`<div class="sprite anim"></div>
       <div class="meta"><div class="nm">${it.n}<span class="cat ${it.c}">${it.c==="aero"?"有氧":it.c==="rec"?"恢复":"力量"}</span></div>
-      <div class="sets">${it.s}</div>${it.note?`<div class="note">${it.note}</div>`:""}</div>
+      <div class="sets">${it.s}${wt}</div>${it.note?`<div class="note">${it.note}</div>`:""}</div>
       <div class="chk">✓</div>`;
     setSprite(el.querySelector(".sprite"),it.k);
-    el.onclick=()=>{state[i]=!state[i];save(state);render();if(state[i])checkAll(plan);};
+    if(isToday)el.onclick=()=>{state[i]=!state[i];save(state);render();if(state[i])checkAll(plan);};
     list.appendChild(el);
   });
-  const total=plan.items.length, done=plan.items.filter((_,i)=>state[i]).length;
-  document.getElementById("progFill").style.width=(total?done/total*100:0)+"%";
-  document.getElementById("progPct").textContent=done+"/"+total;
-  renderWeek(dow);
+  if(isToday){
+    const total=plan.items.length, done=plan.items.filter((_,i)=>state[i]).length;
+    document.getElementById("progFill").style.width=(total?done/total*100:0)+"%";
+    document.getElementById("progPct").textContent=done+"/"+total;
+  }
+  renderWeek(realDow);
 }
+document.getElementById("backToday").onclick=()=>{viewDow=realDow;render();window.scrollTo(0,0);};
 function checkAll(plan){
   const total=plan.items.length, done=plan.items.filter((_,i)=>state[i]).length;
   if(done===total && total>0){celebrate();}
