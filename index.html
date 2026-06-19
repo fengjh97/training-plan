@@ -1,429 +1,303 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0a0a0a">
-<title>FJH · 86→65kg · Dashboard</title>
-<link rel="stylesheet" href="./assets/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" href="assets/icon-192.png">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#ffb347">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<title>仓鼠教练 · 今日训练</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fff7ea; --cream2:#ffeccf; --ink:#5a3d28; --ink2:#8a6b52; --faint:#b49a82; --line:#f0d9bd;
+  --fur:#e8a33d; --fur-d:#c97f22; --red:#ff6b5e; --blue:#5aa9e6; --green:#5fc98a; --green-d:#3da86a;
+  --card:#fffdf8; --shadow:0 6px 0 rgba(201,127,34,.18),0 14px 30px rgba(201,127,34,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:var(--cream);color:var(--ink);font-family:"Fredoka","PingFang SC",-apple-system,sans-serif}
+body{
+  max-width:520px;margin:0 auto;min-height:100vh;padding:0 0 96px;
+  background-image:radial-gradient(circle at 12% 8%,rgba(255,179,71,.12),transparent 40%),radial-gradient(circle at 90% 4%,rgba(90,169,230,.10),transparent 38%);
+  background-attachment:fixed;
+}
+.wrap{padding:16px 16px 0}
+.top{display:flex;align-items:center;gap:12px;padding:8px 2px 4px}
+.top .logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(160deg,var(--fur),var(--fur-d));display:grid;place-items:center;font-size:24px;box-shadow:var(--shadow)}
+.top h1{font-size:20px;font-weight:700;letter-spacing:.5px}
+.top .date{font-size:12px;color:var(--ink2);font-weight:500}
+.hero{margin-top:14px;background:linear-gradient(165deg,#fff4dc,#ffe2b8);border:2px solid #ffd89a;border-radius:26px;padding:18px 18px 16px;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(201,127,34,.06) 1.4px,transparent 1.4px);background-size:14px 14px;pointer-events:none}
+.hero .mood{display:flex;gap:14px;align-items:center;position:relative;z-index:1}
+.hero .sprite{width:96px;height:96px;flex-shrink:0;border-radius:20px;background-color:#fff;border:2px solid #ffd89a;box-shadow:inset 0 -4px 0 rgba(201,127,34,.08)}
+.hero .htxt{flex:1}
+.hero .day-tag{display:inline-block;font-size:12px;font-weight:600;color:#fff;background:var(--fur-d);padding:3px 11px;border-radius:999px;letter-spacing:.5px}
+.hero h2{font-size:23px;font-weight:700;margin:7px 0 2px;line-height:1.2}
+.hero .focus{font-size:13px;color:var(--ink2);font-weight:500}
+.hero .slogan{margin-top:11px;font-size:15px;font-weight:600;color:var(--fur-d);background:#fff;border:2px dashed #ffce85;border-radius:14px;padding:8px 12px;text-align:center;position:relative;z-index:1}
+.prog{display:flex;align-items:center;gap:10px;margin:16px 2px 6px}
+.prog .bar{flex:1;height:14px;background:#ffe6c2;border-radius:999px;overflow:hidden;border:1.5px solid #ffd89a}
+.prog .fill{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--green-d));border-radius:999px;transition:width .5s cubic-bezier(.34,1.56,.64,1)}
+.prog .pct{font-size:13px;font-weight:700;color:var(--green-d);min-width:52px;text-align:right}
+.lab{font-size:13px;font-weight:700;color:var(--ink2);margin:18px 4px 8px;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
+.lab::before{content:"";width:14px;height:14px;border-radius:5px;background:var(--fur)}
+.item{display:flex;gap:13px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:20px;padding:12px;margin-bottom:11px;box-shadow:0 4px 0 rgba(201,127,34,.10);transition:transform .15s,border-color .2s,background .2s;cursor:pointer}
+.item:active{transform:scale(.98)}
+.item.done{background:#eefaf0;border-color:#bfe9cd}
+.item .sprite{width:72px;height:72px;flex-shrink:0;border-radius:16px;background-color:#fff7ea;border:2px solid var(--line)}
+.item.done .sprite{opacity:.5}
+.item .meta{flex:1;min-width:0}
+.item .nm{font-size:16px;font-weight:600}
+.item.done .nm{text-decoration:line-through;color:var(--ink2)}
+.item .sets{font-size:13px;color:var(--ink2);font-weight:500;margin-top:2px}
+.item .note{font-size:11.5px;color:var(--faint);margin-top:3px}
+.item .chk{width:30px;height:30px;flex-shrink:0;border-radius:50%;border:2.5px solid #e3c79f;display:grid;place-items:center;color:transparent;font-size:17px;font-weight:700;transition:.2s}
+.item.done .chk{background:var(--green);border-color:var(--green-d);color:#fff}
+.cat{font-size:11px;font-weight:600;color:#fff;padding:2px 8px;border-radius:999px;display:inline-block;margin-left:6px;vertical-align:middle}
+.cat.aero{background:var(--blue)}.cat.str{background:var(--red)}.cat.rec{background:#9ab86a}
+.anim{background-repeat:no-repeat;background-size:200% 200%;animation:sheet 1s steps(1) infinite}
+@keyframes sheet{0%{background-position:0 0}25%{background-position:100% 0}50%{background-position:0 100%}75%{background-position:100% 100%}100%{background-position:0 0}}
+.tabs{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;display:flex;background:#fffdf8;border-top:2px solid var(--line);padding:8px 6px calc(8px + env(safe-area-inset-bottom));z-index:40;box-shadow:0 -6px 20px rgba(201,127,34,.10)}
+.tabs button{flex:1;background:none;border:none;font-family:inherit;font-size:11px;font-weight:600;color:var(--ink2);display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px;border-radius:12px}
+.tabs button .ic{font-size:21px;line-height:1;transition:.2s}
+.tabs button.on{color:var(--fur-d)}
+.tabs button.on .ic{transform:translateY(-2px) scale(1.12)}
+.page{display:none;animation:fadein .35s ease}
+.page.on{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.wk{display:flex;gap:11px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:11px 13px;margin-bottom:9px}
+.wk.today{border-color:var(--fur);background:#fff4dc;box-shadow:0 4px 0 rgba(201,127,34,.14)}
+.wk .dn{width:30px;height:30px;border-radius:10px;background:var(--cream2);display:grid;place-items:center;font-weight:700;color:var(--fur-d);flex-shrink:0}
+.wk.today .dn{background:var(--fur);color:#fff}
+.wk .wmeta{flex:1}.wk .wt{font-size:14.5px;font-weight:600}.wk .wf{font-size:12px;color:var(--ink2);margin-top:1px}
+.ref{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:15px 16px;margin-bottom:13px;box-shadow:0 4px 0 rgba(201,127,34,.08)}
+.ref h3{font-size:15px;font-weight:700;color:var(--fur-d);margin-bottom:9px}
+.ref table{width:100%;border-collapse:collapse;font-size:12.5px}
+.ref th,.ref td{text-align:left;padding:6px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.ref th{color:var(--ink2);font-size:11px;font-weight:600}
+.ref td b{color:var(--ink)}
+.zones{display:flex;gap:4px;margin:6px 0 9px}
+.zones div{flex:1;text-align:center;font-size:10px;font-weight:600;color:#fff;padding:7px 2px;border-radius:8px;line-height:1.25}
+.tip{font-size:12px;color:var(--ink2);line-height:1.6;margin-top:6px}
+.tip b{color:var(--red)}
+.cele{position:fixed;inset:0;z-index:80;background:rgba(255,247,234,.96);display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px;backdrop-filter:blur(3px)}
+.cele.on{display:flex;animation:fadein .4s}
+.cele .gsprite{width:200px;height:200px;border-radius:30px;background-color:#fff;border:3px solid #ffd89a;box-shadow:var(--shadow)}
+.cele h2{font-size:27px;font-weight:700;margin:18px 0 6px;color:var(--fur-d)}
+.cele p{font-size:15px;color:var(--ink2);font-weight:500;max-width:300px;line-height:1.6}
+.cele button{margin-top:22px;font-family:inherit;font-size:15px;font-weight:600;color:#fff;background:linear-gradient(160deg,var(--green),var(--green-d));border:none;padding:12px 30px;border-radius:999px;box-shadow:0 5px 0 var(--green-d)}
+.cele button:active{transform:translateY(3px);box-shadow:0 2px 0 var(--green-d)}
+.confetti{position:fixed;top:-10px;width:10px;height:14px;z-index:81;pointer-events:none;border-radius:2px}
+.foot{text-align:center;font-size:11px;color:var(--faint);margin:18px 0 6px;font-weight:500;line-height:1.6}
+</style>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="./">
-      <span class="mark">FJH/01</span>
-      <span class="mark-divider">·</span>
-      <span class="title">86 → 65 kg</span>
-    </a>
-    <div class="nav-links">
-      <a href="./" class="active">概览</a>
-      <a href="./training.html">训练</a>
-      <a href="./diet.html">饮食</a>
-    </div>
+<div class="wrap">
+  <div class="top">
+    <div class="logo">🐹</div>
+    <div><h1>仓鼠教练</h1><div class="date" id="dateline"></div></div>
   </div>
-</nav>
 
-<main>
-
-  <!-- HERO -->
-  <header class="hero fade-in">
-    <div class="hero-eyebrow">
-      <span>WEIGHT LOSS · WEEK <span id="heroWeek" class="mono">--</span> OF 17</span>
-    </div>
-    <h1 class="hero-title">
-      <span class="num">86</span><span class="arrow">→</span><span class="num">65</span><span class="t-dim" style="font-size:0.5em;font-weight:500;letter-spacing:-1px;margin-left:8px;">KG</span>
-    </h1>
-    <div class="hero-meta">
-      <div class="item">
-        <div class="v" id="heroProgress">--</div>
-        <div class="k">PROGRESS</div>
-      </div>
-      <div class="item">
-        <div class="v" id="heroDay">--</div>
-        <div class="k">DAY</div>
-      </div>
-      <div class="item">
-        <div class="v" id="heroDaysLeft">--</div>
-        <div class="k">DAYS LEFT</div>
-      </div>
-      <div class="item">
-        <div class="v" id="heroPace">--</div>
-        <div class="k">PACE / WK</div>
-      </div>
-    </div>
-  </header>
-
-  <!-- METRICS ROW -->
-  <section class="row row-3 fade-in delay-1">
-    <div class="metric accent">
-      <div class="label">CURRENT</div>
-      <div class="value mono"><span id="curWeight">--</span><span class="unit">kg</span></div>
-      <div class="delta" id="curDelta">tap "记录体重" 开始</div>
-    </div>
-    <div class="metric">
-      <div class="label">THIS WEEK TARGET</div>
-      <div class="value mono"><span id="weekTarget">--</span><span class="unit">kg</span></div>
-      <div class="delta" id="weekDelta">--</div>
-    </div>
-    <div class="metric">
-      <div class="label">TO GOAL</div>
-      <div class="value mono"><span id="toGoal">--</span><span class="unit">kg</span></div>
-      <div class="delta" id="toGoalDelta">remaining</div>
-    </div>
-  </section>
-
-  <!-- CHART + RING -->
-  <section class="section fade-in delay-2">
-    <div class="row row-2-1">
-      <div class="chart-card">
-        <div class="chart-head">
-          <div class="title">体重 · 趋势线</div>
-          <div class="legend">
-            <span class="legend-item"><span class="legend-swatch" style="background:var(--gold)"></span>实际</span>
-            <span class="legend-item"><span class="legend-swatch" style="background:var(--ink-4)"></span>目标</span>
-          </div>
-        </div>
-        <svg class="chart-svg" id="weightChart" viewBox="0 0 600 220" preserveAspectRatio="none">
-          <!-- rendered by JS -->
-        </svg>
-      </div>
-
-      <div class="ring-card">
-        <div class="label">17W PROGRESS</div>
-        <svg class="ring-svg" viewBox="0 0 100 100">
-          <circle class="ring-track" cx="50" cy="50" r="42"></circle>
-          <circle class="ring-fill" id="ringFill" cx="50" cy="50" r="42"
-                  stroke-dasharray="263.89" stroke-dashoffset="263.89"></circle>
-          <text class="ring-text-pct" x="50" y="48" id="ringPct">0%</text>
-          <text class="ring-text-label" x="50" y="64" id="ringSub">0 / 21 KG</text>
-        </svg>
-        <div style="width:100%">
-          <button class="btn primary full" onclick="FJH.openWeightModal()">+ 记录体重</button>
+  <div class="page on" id="page-today">
+    <div class="hero">
+      <div class="mood">
+        <div class="sprite anim" id="heroSprite"></div>
+        <div class="htxt">
+          <span class="day-tag" id="dayTag"></span>
+          <h2 id="dayTitle"></h2>
+          <div class="focus" id="dayFocus"></div>
         </div>
       </div>
+      <div class="slogan" id="heroSlogan"></div>
     </div>
-  </section>
+    <div class="prog">
+      <div class="bar"><div class="fill" id="progFill"></div></div>
+      <div class="pct" id="progPct">0/0</div>
+    </div>
+    <div class="lab">今日菜单 · 点一下打勾</div>
+    <div id="itemList"></div>
+    <div class="foot">第6版定稿 · 高有氧刷脂 + 胸优先力量<br>身体投反对票时,听身体 🌿</div>
+  </div>
 
-  <!-- TODAY -->
-  <section class="section fade-in delay-3">
-    <div class="section-head">
-      <span class="num mono">02</span>
-      <h2>今日</h2>
-      <span class="meta" id="todayMetaDate">--</span>
-    </div>
-    <div id="todayContent">
-      <!-- rendered by JS -->
-    </div>
-  </section>
+  <div class="page" id="page-week">
+    <div class="lab" style="margin-top:6px">本周计划 / The Week</div>
+    <div id="weekList"></div>
+    <div class="ref" style="margin-top:6px"><h3>🧠 一句话</h3><div class="tip">一肩 · 二胸 · 三背肩 · 四胸 · 五轻恢复 · 六 brick · 日三大项。胸隔天排(二/四/日)无连轰;有氧不因力量减量;力量分散小剂量塞进有氧日,容量向胸倾斜。</div></div>
+  </div>
 
-  <!-- DIET TODAY -->
-  <section class="section fade-in delay-4">
-    <div class="section-head">
-      <span class="num mono">03</span>
-      <h2>今日饮食</h2>
-      <span class="meta" id="dietMeta">--</span>
+  <div class="page" id="page-ref">
+    <div class="lab" style="margin-top:6px">参考 / Reference</div>
+    <div class="ref"><h3>💪 器械 & 重量进阶</h3>
+      <table><tr><th>动作</th><th>起始</th><th>进阶</th></tr>
+      <tr><td><b>高位下拉</b></td><td>35kg×12</td><td>双递进</td></tr>
+      <tr><td><b>坐姿划船</b></td><td>单臂~15-20kg</td><td>双递进</td></tr>
+      <tr><td><b>器械推胸</b></td><td>~30-40kg</td><td>双递进→史50</td></tr>
+      <tr><td><b>俯卧撑</b></td><td>8-10组×5-8</td><td>10×5→10×8→上斜/负重</td></tr>
+      <tr><td><b>侧平举</b></td><td>3kg×12-20</td><td>逐周→4-5kg</td></tr></table>
+      <div class="tip"><b>双递进:</b>固定重量,所有组都到上限次数且留1-2余力 → 加重(复合+2.5-5kg/侧平举+1-2kg)→次数掉回下限重爬。<b>留1-2余力别力竭</b>,减脂期"重量维持不掉"就是成功。</div>
     </div>
-    <div class="macros">
-      <div class="macro-tile">
-        <div class="k">KCAL</div>
-        <div class="v" id="dietKcal">0</div>
-        <div class="u">/ 1700</div>
+    <div class="ref"><h3>❤️ 心率分区 · max197 RHR56</h3>
+      <div class="zones">
+        <div style="background:#90a4b8">Z1<br>127-140</div>
+        <div style="background:#5fc98a">Z2<br>141-154</div>
+        <div style="background:#f6b24e">Z3<br>155-168</div>
+        <div style="background:#ff8a4e">Z4<br>169-182</div>
+        <div style="background:#ff6b5e">Z5<br>183-197</div>
       </div>
-      <div class="macro-tile">
-        <div class="k">PROTEIN</div>
-        <div class="v" id="dietP">0</div>
-        <div class="u">g / 160g</div>
-      </div>
-      <div class="macro-tile">
-        <div class="k">FAT</div>
-        <div class="v" id="dietF">0</div>
-        <div class="u">g / 55g</div>
-      </div>
-      <div class="macro-tile">
-        <div class="k">CARB</div>
-        <div class="v" id="dietC">0</div>
-        <div class="u">g / 140g</div>
-      </div>
+      <div class="tip">Z2 目标 145-154(easy 都压这);LSD 145-158。说话测试:能说整句=Z2。乳酸阈 LTHR 177。热/无风顶高 HR,别死盯数字。</div>
     </div>
-    <div class="card no-pad" style="padding:8px 22px">
-      <div id="mealList">
-        <!-- rendered by JS -->
-      </div>
+    <div class="ref"><h3>🔥 周六 brick 大课</h3>
+      <table><tr><th>段</th><th>量</th><th>强度</th></tr>
+      <tr><td>① 划船</td><td>45min</td><td>130-140W·桨频18-22</td></tr>
+      <tr><td>② 骑行</td><td>60min</td><td>Z2·110-130W</td></tr>
+      <tr><td>③ 跑步</td><td>10km</td><td>brick核心</td></tr></table>
+      <div class="tip">前面别上头,压住划/骑,<b>最后10km累腿上跑才是核心</b>(铁三专项)。带宝矿力+香蕉。</div>
     </div>
-  </section>
-
-</main>
-
-<!-- WEIGHT LOG MODAL -->
-<div class="modal-bg" id="weightModal" onclick="if(event.target===this)FJH.closeWeightModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="FJH.closeWeightModal()">×</button>
-    <div class="modal-head">
-      <span class="num">/ LOG</span>
-      <h3>记录今日体重</h3>
+    <div class="ref"><h3>🚦 每日自调节</h3>
+      <div class="tip">这套是"默认",晨间数据是"覆盖"。<b>晨HRV崩/准备度LOW/出症状</b>→降级:easy短/纯划船/直接歇。红灯先砍力量+周五直接纯躺。周日紧跟brick,累就只爬坡砍三大项。<b>看趋势(腰围/HRV曲线)不看单点。6月恢复变脆→宁可巩固别加量。</b></div>
     </div>
-    <div class="input-group">
-      <label>WEIGHT (KG)</label>
-      <input type="number" step="0.1" min="30" max="200" class="input" id="weightInput" placeholder="例如 84.3" inputmode="decimal">
-    </div>
-    <div class="row row-2">
-      <button class="btn ghost" onclick="FJH.closeWeightModal()">取消</button>
-      <button class="btn primary" onclick="FJH.submitWeight()">保存</button>
-    </div>
-    <p class="t-dim mono" style="font-size:10px;margin-top:14px;letter-spacing:1px;line-height:1.7">
-      早晨空腹 · 排空 · 同一体重秤<br>
-      看 7 日移动平均，单日 ±1.5kg 是正常波动
-    </p>
   </div>
 </div>
 
-<script src="./assets/app.js"></script>
+<div class="cele" id="cele">
+  <div class="gsprite anim" id="celeSprite"></div>
+  <h2>慢慢来,你真棒 🌸</h2>
+  <p id="celeMsg"></p>
+  <button onclick="document.getElementById('cele').classList.remove('on')">好的，休息一下～</button>
+</div>
+
+<div class="tabs">
+  <button class="on" data-p="today"><span class="ic">🐹</span>今日</button>
+  <button data-p="week"><span class="ic">📅</span>本周</button>
+  <button data-p="ref"><span class="ic">📖</span>参考</button>
+</div>
+
 <script>
-let _plan = null;
+const A="assets/anim/";
+const DAYS={
+ 1:{t:"划船 + 跑步 + 肩",f:"有氧 + 肩",cat:"aero",items:[
+   {k:"rowing_erg",n:"划船机",c:"aero",s:"有氧热身 · Z2",note:"130-140W 桨频18-22"},
+   {k:"running",n:"跑步 5km",c:"aero",s:"Z2 145-154",note:"说话测试:能说整句"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:"3kg起·泵感·不耸肩借力"},
+ ]},
+ 2:{t:"爬楼 + 胸",f:"有氧 + 胸",cat:"aero",items:[
+   {k:"stairs",n:"爬楼",c:"aero",s:"有氧 · Z2",note:"稳态刷脂"},
+   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",note:"路线 10×5→10×6→10×8"},
+   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3-4 × 10-15",note:"补上胸容量"},
+ ]},
+ 3:{t:"爬坡 + 背 + 肩",f:"有氧 + 背 + 肩",cat:"aero",items:[
+   {k:"incline_walk",n:"爬坡",c:"aero",s:"有氧 · Z2",note:"压住别上强度"},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3-4 × 8-12",note:"背阔·宽握·留1-2余力"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"3-4 × 8-12",note:"中背厚度"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:"逐周加到4-5kg"},
+ ]},
+ 4:{t:"划船 + 跑步 + 胸",f:"有氧 + 胸",cat:"aero",items:[
+   {k:"rowing_erg",n:"划船机",c:"aero",s:"有氧热身",note:"130-140W"},
+   {k:"running",n:"跑步 5km",c:"aero",s:"Z2 145-154",note:""},
+   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",note:"隔天排·容量加大"},
+   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3-4 × 10-15",note:""},
+ ]},
+ 5:{t:"轻居家恢复",f:"主动恢复 · 不是加练",cat:"rec",items:[
+   {k:"pushup",n:"俯卧撑(留余力)",c:"rec",s:"几组 · 留3-4余力",note:"绝不力竭·submaximal"},
+   {k:"lateral_raise",n:"侧平举(轻)",c:"rec",s:"轻量几组",note:"~10-15min 促血流"},
+ ]},
+ 6:{t:"LSD / brick 大课",f:"大有氧 + 肩 · 周峰",cat:"aero",items:[
+   {k:"rowing_erg",n:"划船",c:"aero",s:"45 min",note:"130-140W 桨频18-22"},
+   {k:"cycling",n:"骑行",c:"aero",s:"60 min",note:"Z2 ~110-130W"},
+   {k:"running",n:"跑步 10km",c:"aero",s:"brick 核心",note:"累腿上跑=铁三专项"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",note:""},
+ ]},
+ 0:{t:"爬坡 + 三大项(上肢)",f:"有氧 + 推拉",cat:"aero",items:[
+   {k:"incline_walk",n:"爬坡",c:"aero",s:"有氧 · Z2",note:"post-brick 不碰腿"},
+   {k:"chest_press",n:"器械推胸",c:"str",s:"3 × 8-12",note:"稳控别冲极限"},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3-4 × 8-12",note:"背阔"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"3-4 × 8-12",note:"中背厚度"},
+ ]},
+};
+const SLOGAN_PRE=["今天也要冲鸭!🔥","加油加油,你最强!💪","动起来,小宇宙爆发!⚡","就是现在,练它!🐹🔥","能量满格,出发!🚀"];
+const CELE_MSG=["每一滴汗都算数。今天的你,比昨天更棒一点点。🌱","慢慢来,坚持比强度更重要。好好休息,身体会记得。💛","完成就是胜利。减脂看趋势不看单点,你在正确的路上。🌸","了不起!记得补水、拉伸、好好睡。明天见~ 😴","稳稳的,这就是日积月累的力量。为你骄傲!⭐"];
+const WD=["日","一","二","三","四","五","六"];
 
-async function renderAll() {
-  if (!_plan) _plan = await FJH.loadPlan();
-  const state = FJH.loadState();
-  renderHero(state);
-  renderMetrics(state);
-  renderRing(state);
-  renderChart(state);
-  renderToday(state, _plan);
-  renderDiet(state);
-}
+function key(){const d=new Date();return "tp6_"+d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();}
+function load(){try{return JSON.parse(localStorage.getItem(key()))||{}}catch(e){return {}}}
+function save(s){localStorage.setItem(key(),JSON.stringify(s))}
+function setSprite(el,k){el.style.backgroundImage="url('"+A+k+".jpg')";}
 
-function renderHero(state) {
-  const di = FJH.dayIndex();
-  const wi = FJH.weekIndex();
-  const cur = FJH.getCurrentWeight(state) ?? FJH.START_KG;
-  const lost = (FJH.START_KG - cur).toFixed(1);
-  const daysLeft = Math.max(0, FJH.TOTAL_DAYS - Math.max(0, di));
-  const weeksLeft = Math.max(1, FJH.TOTAL_WEEKS - Math.max(0, wi - 1));
-  const remaining = (cur - FJH.TARGET_KG).toFixed(1);
-  const pacePerWeek = (remaining / weeksLeft).toFixed(2);
-
-  document.getElementById('heroWeek').textContent = wi || '0';
-  document.getElementById('heroProgress').textContent = `−${lost} kg`;
-  document.getElementById('heroDay').textContent = di < 0 ? `T${di}` : `${di} / 119`;
-  document.getElementById('heroDaysLeft').textContent = daysLeft;
-  document.getElementById('heroPace').textContent = `${pacePerWeek} kg`;
-}
-
-function renderMetrics(state) {
-  const cur = FJH.getCurrentWeight(state);
-  const wi = Math.max(1, FJH.weekIndex());
-  const wTarget = FJH.targetForWeek(wi).toFixed(1);
-
-  document.getElementById('curWeight').textContent = cur ? cur.toFixed(1) : '86.0';
-  if (cur) {
-    const dates = Object.keys(state.weights).sort();
-    if (dates.length >= 2) {
-      const prev = state.weights[dates[dates.length - 2]];
-      const delta = (cur - prev).toFixed(1);
-      const cls = delta < 0 ? 'pos' : (delta > 0 ? 'neg' : '');
-      document.getElementById('curDelta').className = `delta ${cls}`;
-      document.getElementById('curDelta').textContent = `${delta >= 0 ? '+' : ''}${delta} 较上次`;
-    } else {
-      document.getElementById('curDelta').textContent = '首次记录 ✓';
-    }
-  }
-
-  document.getElementById('weekTarget').textContent = wTarget;
-  const wDelta = cur ? (cur - parseFloat(wTarget)).toFixed(1) : null;
-  if (wDelta !== null) {
-    const ahead = parseFloat(wDelta) <= 0;
-    document.getElementById('weekDelta').className = `delta ${ahead ? 'pos' : 'neg'}`;
-    document.getElementById('weekDelta').textContent = ahead ? `领先目标 ${Math.abs(wDelta)} kg` : `落后目标 ${wDelta} kg`;
-  } else {
-    document.getElementById('weekDelta').textContent = `W${wi} target`;
-  }
-
-  const toGoal = cur ? (cur - FJH.TARGET_KG).toFixed(1) : (FJH.START_KG - FJH.TARGET_KG).toFixed(1);
-  document.getElementById('toGoal').textContent = toGoal;
-}
-
-function renderRing(state) {
-  const pct = FJH.progressPct(state);
-  const cur = FJH.getCurrentWeight(state) ?? FJH.START_KG;
-  const lost = FJH.START_KG - cur;
-  const C = 2 * Math.PI * 42;
-  const offset = C * (1 - pct / 100);
-  document.getElementById('ringFill').setAttribute('stroke-dashoffset', offset);
-  document.getElementById('ringPct').textContent = `${pct}%`;
-  document.getElementById('ringSub').textContent = `${lost.toFixed(1)} / 21 KG`;
-}
-
-function renderChart(state) {
-  const svg = document.getElementById('weightChart');
-  const W = 600, H = 220, P = { l: 32, r: 12, t: 14, b: 28 };
-  const traj = FJH.buildTargetTrajectory();
-  const minW = 62, maxW = 88;
-
-  const xForDate = (d) => {
-    const dayIdx = FJH.daysBetween(FJH.PLAN_START, d);
-    return P.l + (dayIdx / FJH.TOTAL_DAYS) * (W - P.l - P.r);
-  };
-  const yForKg = (kg) => P.t + (1 - (kg - minW) / (maxW - minW)) * (H - P.t - P.b);
-
-  let axisHTML = '';
-  for (let kg = 65; kg <= 86; kg += 7) {
-    const y = yForKg(kg);
-    axisHTML += `<line class="chart-grid" x1="${P.l}" x2="${W - P.r}" y1="${y}" y2="${y}"/>`;
-    axisHTML += `<text class="chart-axis-label" x="${P.l - 6}" y="${y + 3}" text-anchor="end">${kg}</text>`;
-  }
-  const months = [['MAY 11', '2026-05-11'], ['JUN 1', '2026-06-01'], ['JUL 1', '2026-07-01'], ['AUG 1', '2026-08-01'], ['SEP 6', '2026-09-06']];
-  months.forEach(([lbl, d]) => {
-    const x = xForDate(d);
-    axisHTML += `<text class="chart-axis-label" x="${x}" y="${H - 10}" text-anchor="middle">${lbl}</text>`;
+let state=load();
+function render(){
+  const d=new Date(), dow=d.getDay(), plan=DAYS[dow];
+  document.getElementById("dateline").textContent=`${d.getMonth()+1}月${d.getDate()}日 · 周${WD[dow]}`;
+  document.getElementById("dayTag").textContent="周"+WD[dow]+" · "+plan.f;
+  document.getElementById("dayTitle").textContent=plan.t;
+  const isRec=plan.cat==="rec";
+  document.getElementById("dayFocus").textContent=isRec?"今天慢下来,主动恢复":"专注 · 一项一项来";
+  setSprite(document.getElementById("heroSprite"), isRec?"gentle":"hype");
+  document.getElementById("heroSlogan").textContent=isRec?"今天不硬刚,舒服动一动就好 🌿":SLOGAN_PRE[d.getDate()%SLOGAN_PRE.length];
+  const list=document.getElementById("itemList");list.innerHTML="";
+  plan.items.forEach((it,i)=>{
+    const done=!!state[i];
+    const el=document.createElement("div");el.className="item"+(done?" done":"");
+    el.innerHTML=`<div class="sprite anim"></div>
+      <div class="meta"><div class="nm">${it.n}<span class="cat ${it.c}">${it.c==="aero"?"有氧":it.c==="rec"?"恢复":"力量"}</span></div>
+      <div class="sets">${it.s}</div>${it.note?`<div class="note">${it.note}</div>`:""}</div>
+      <div class="chk">✓</div>`;
+    setSprite(el.querySelector(".sprite"),it.k);
+    el.onclick=()=>{state[i]=!state[i];save(state);render();if(state[i])checkAll(plan);};
+    list.appendChild(el);
   });
-
-  const targetPoints = traj.map(p => `${xForDate(p.date)},${yForKg(p.kg)}`).join(' ');
-  let lineHTML = `<polyline class="chart-line-target" points="${targetPoints}"/>`;
-
-  const wDates = Object.keys(state.weights).sort();
-  if (wDates.length) {
-    const actualPoints = wDates.map(d => `${xForDate(d)},${yForKg(state.weights[d])}`).join(' ');
-    const firstX = xForDate(wDates[0]);
-    const lastX = xForDate(wDates[wDates.length - 1]);
-    const baseY = H - P.b;
-    lineHTML += `<polygon class="chart-area" points="${firstX},${baseY} ${actualPoints} ${lastX},${baseY}"/>`;
-    lineHTML += `<polyline class="chart-line-actual" points="${actualPoints}"/>`;
-    const lastD = wDates[wDates.length - 1];
-    lineHTML += `<circle class="chart-dot" cx="${xForDate(lastD)}" cy="${yForKg(state.weights[lastD])}" r="4"/>`;
-  }
-
-  svg.innerHTML = `<defs>
-    <linearGradient id="goldFade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#d4a017" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#d4a017" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  ${axisHTML}
-  ${lineHTML}`;
+  const total=plan.items.length, done=plan.items.filter((_,i)=>state[i]).length;
+  document.getElementById("progFill").style.width=(total?done/total*100:0)+"%";
+  document.getElementById("progPct").textContent=done+"/"+total;
+  renderWeek(dow);
 }
-
-function renderToday(state, plan) {
-  const di = FJH.dayIndex();
-  const cont = document.getElementById('todayContent');
-  document.getElementById('todayMetaDate').textContent =
-    di < 0 ? `还有 ${-di} 天开始` : (di >= FJH.TOTAL_DAYS ? '计划已结束' : `DAY ${di + 1}`);
-
-  if (di < 0) {
-    // Pre-launch countdown
-    const startDate = new Date(FJH.PLAN_START + 'T00:00:00Z');
-    const dayNames = ['周日','周一','周二','周三','周四','周五','周六'];
-    const startDow = dayNames[startDate.getUTCDay()];
-    const mm = startDate.getUTCMonth() + 1, dd = startDate.getUTCDate();
-    cont.innerHTML = `
-      <div class="card" style="background:linear-gradient(155deg, var(--gold-tint) 0%, var(--bg-surface) 70%);border-color:var(--border-accent);padding:32px 28px;text-align:center">
-        <div class="mono t-gold" style="font-size:11px;letter-spacing:3px;margin-bottom:14px">— PRE LAUNCH —</div>
-        <div class="big-num" style="font-size:96px">T<span class="t-gold">−</span>${-di}</div>
-        <div class="t-dim mono" style="font-size:11px;letter-spacing:2px;margin-top:14px">DAY 0 · ${startDate.getUTCFullYear()}.${String(mm).padStart(2,'0')}.${String(dd).padStart(2,'0')} · ${startDow}</div>
-        <div style="margin-top:22px;font-size:13px;color:var(--ink-2);max-width:420px;margin-left:auto;margin-right:auto;line-height:1.7">
-          准备就绪。距离启动 <strong class="t-gold">${-di} 天</strong>，先把器材清单 + コンビニ路线规划好。
-        </div>
-      </div>`;
-    return;
+function checkAll(plan){
+  const total=plan.items.length, done=plan.items.filter((_,i)=>state[i]).length;
+  if(done===total && total>0){celebrate();}
+}
+function celebrate(){
+  const d=new Date();
+  setSprite(document.getElementById("celeSprite"),"gentle");
+  document.getElementById("celeMsg").textContent=CELE_MSG[d.getDate()%CELE_MSG.length];
+  document.getElementById("cele").classList.add("on");
+  confetti();
+}
+function confetti(){
+  const cols=["#ff6b5e","#5aa9e6","#5fc98a","#ffb347","#c97f22"];
+  for(let i=0;i<70;i++){
+    const c=document.createElement("div");c.className="confetti";
+    c.style.left=Math.random()*100+"vw";c.style.background=cols[i%cols.length];
+    c.style.animation=`fall ${1+Math.random()*1.5}s ${Math.random()*.5}s ease-in forwards`;
+    document.body.appendChild(c);setTimeout(()=>c.remove(),3200);
   }
-  if (di >= FJH.TOTAL_DAYS) {
-    cont.innerHTML = `<div class="card"><p>17 周计划已完成 ✓</p></div>`;
-    return;
-  }
-
-  const wi = FJH.weekIndex() - 1;
-  const dayInWeek = di % 7;
-  const week = plan.weeks[wi];
-  const today = week.days[dayInWeek];
-
-  // Week strip: show all 7 days of current week
-  const sportKlass = (s, type) => {
-    if (type === 'strength') return 'strength';
-    if (s === 'bike') return 'stair';
-    return 'cardio';
+}
+const st=document.createElement("style");
+st.textContent="@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.15}}";
+document.head.appendChild(st);
+function renderWeek(dow){
+  const wl=document.getElementById("weekList");wl.innerHTML="";
+  [1,2,3,4,5,6,0].forEach(i=>{
+    const p=DAYS[i],el=document.createElement("div");
+    el.className="wk"+(i===dow?" today":"");
+    el.innerHTML=`<div class="dn">${WD[i]}</div><div class="wmeta"><div class="wt">${p.t}</div><div class="wf">${p.f}</div></div>`;
+    wl.appendChild(el);
+  });
+}
+document.querySelectorAll(".tabs button").forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("on"));
+    document.querySelectorAll(".page").forEach(x=>x.classList.remove("on"));
+    b.classList.add("on");document.getElementById("page-"+b.dataset.p).classList.add("on");
+    window.scrollTo(0,0);
   };
-  const sportLabel = (s, type) => {
-    if (type === 'strength') return 'STRENGTH';
-    if (s === 'bike') return 'STAIR';
-    if (type === 'interval') return 'CARDIO HIIT';
-    return 'CARDIO';
-  };
-
-  const stripHTML = `<div class="weekstrip">${week.days.map((d, idx) => {
-    const dayAbsIdx = wi * 7 + idx;
-    const isToday = dayAbsIdx === di;
-    const isPast = dayAbsIdx < di;
-    const isRest = !d.workouts.length || d.workouts[0].sport === 'rest';
-    const allDone = !isRest && d.workouts.every(wkt => FJH.isWorkoutDone(state, wkt.id));
-    const dowShort = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'][idx];
-    const dStr = d.date.slice(8);
-    const klass = `wstrip-day ${isToday ? 'today' : ''} ${isPast && !isToday ? 'past' : ''} ${allDone ? 'done' : ''} ${isRest ? 'rest' : ''}`;
-    const icon = isRest ? '·' : (allDone ? '<span class="wstrip-icon green">✓</span>' : (isToday ? '<span class="wstrip-icon gold">●</span>' : ''));
-    return `<div class="${klass}">
-      <div class="wstrip-dow">${dowShort}</div>
-      <div class="wstrip-num">${dStr}</div>
-      ${icon}
-    </div>`;
-  }).join('')}</div>`;
-
-  let workoutsHTML = '';
-  if (!today.workouts.length || today.workouts[0].sport === 'rest') {
-    workoutsHTML = `<div class="card" style="text-align:center;padding:32px"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);letter-spacing:2px;margin-bottom:8px">REST DAY</div><h3 style="font-size:18px;margin-bottom:6px">主动恢复</h3><p class="t-dim" style="font-size:13px">下班路上多走两站，或散步 30 分钟。早睡。</p></div>`;
-  } else {
-    workoutsHTML = today.workouts.map(w => {
-      const isDone = FJH.isWorkoutDone(FJH.loadState(), w.id);
-      return `
-      <div class="workout today ${isDone ? 'done' : ''}" style="margin-bottom:10px;cursor:pointer">
-        <div style="display:flex;justify-content:space-between;align-items:baseline">
-          <span class="workout-tag ${sportKlass(w.sport, w.type)}">${sportLabel(w.sport, w.type)}</span>
-          <span class="duration"><span class="v">${w.durationMinutes || 0}</span> min ${isDone ? '· <span class="t-green">✓</span>' : ''}</span>
-        </div>
-        <div class="name">${w.name}</div>
-        <div class="duration t-dim" style="white-space:pre-line;font-size:11px;margin-top:6px;line-height:1.6">${(w.humanReadable || w.description || '').split('\n').slice(0, 4).join('\n')}</div>
-        <button class="btn ${isDone ? 'ghost' : 'primary'}" style="margin-top:10px;align-self:flex-start" onclick="event.stopPropagation();toggleWorkoutAction('${w.id}')">${isDone ? '✓ 已完成 · 点击撤销' : '点击 / 标记完成'}</button>
-      </div>`;
-    }).join('');
-  }
-
-  cont.innerHTML = stripHTML + workoutsHTML;
-}
-
-function toggleWorkoutAction(id) {
-  const state = FJH.loadState();
-  FJH.toggleWorkout(state, id);
-  renderAll();
-}
-
-function renderDiet(state) {
-  const today = FJH.todayStr();
-  const meals = FJH.getMealsForDate(state, today);
-  const t = FJH.sumMacros(meals);
-  document.getElementById('dietKcal').textContent = t.kcal;
-  document.getElementById('dietP').textContent = t.p;
-  document.getElementById('dietF').textContent = t.f;
-  document.getElementById('dietC').textContent = t.c;
-  document.getElementById('dietMeta').textContent = `${t.count} / ${FJH.STANDARD_MEALS.length} MEALS`;
-
-  document.getElementById('mealList').innerHTML = FJH.STANDARD_MEALS.map(m => `
-    <div class="meal ${meals[m.k] ? 'done' : ''}" onclick="toggleMealAction('${m.k}')">
-      <div class="meal-check"></div>
-      <div class="meal-time">${m.t}</div>
-      <div class="meal-info">
-        <div class="meal-name">${m.name}</div>
-        <div class="meal-detail"><span class="p">${m.p}g</span> protein · <span class="c">${m.kcal}</span> kcal</div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function toggleMealAction(k) {
-  const state = FJH.loadState();
-  FJH.toggleMeal(state, FJH.todayStr(), k);
-  renderAll();
-}
-
-renderAll();
+});
+render();
+if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}
 </script>
-
 </body>
 </html>
