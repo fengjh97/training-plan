@@ -147,7 +147,7 @@ body{
   <div class="page" id="page-week">
     <div class="lab" style="margin-top:6px">本周计划 / The Week</div>
     <div id="weekList"></div>
-    <div class="ref" style="margin-top:6px"><h3>🧠 一句话</h3><div class="tip">一:轻骑跑+肩 · 二:划船爬坡+完整背 · 三:中等骑跑+俯卧撑肩 · 四:划船爬坡+背减量 · 五:轻居家恢复 · 六:骑90+跑5-8 大brick · 日:爬坡+上肢保肌。<br><b style="color:var(--fur-d)">核心纪律:周一轻、周三中、周六重;周二完整背、周四减量背、周日看状态。</b>骑跑给一三六,划船爬坡给二四,力量穿插不抢有氧主菜。</div></div>
+    <div class="ref" style="margin-top:6px"><h3>🧠 一句话</h3><div class="tip">一:轻骑跑+肩 · 二:划船爬坡+胸 · 三:中等骑跑+背 · 四:划船爬坡+胸 · 五:轻恢复(轻胸) · 六:骑90+跑5-8 大brick · 日:爬坡+卧推下拉划船。<br><b style="color:var(--fur-d)">核心纪律:周一轻、周三中、周六重;胸=二四五 · 背=三 · 肩=一三五六。</b>骑跑给一三六,划船爬坡给二四,力量穿插不抢有氧主菜。</div></div>
   </div>
 
   <div class="page" id="page-ref">
@@ -182,6 +182,10 @@ body{
     <div class="ref"><h3>🚦 每日自调节</h3>
       <div class="tip">这套是"默认",晨间数据是"覆盖"。<b>晨HRV崩/准备度LOW/出症状</b>→降级:easy短/纯划船/直接歇。红灯先砍力量+周五直接纯躺。周日紧跟brick,累就只爬坡砍三大项。<b>看趋势(腰围/HRV曲线)不看单点。6月恢复变脆→宁可巩固别加量。</b></div>
     </div>
+    <div class="ref"><h3>📋 导出计划</h3>
+      <div class="tip" style="margin-bottom:10px">把整周计划(含动作/重量/组数)导出为 JSON,一键复制到剪贴板。</div>
+      <button id="exportBtn" style="width:100%;font-family:inherit;font-size:14px;font-weight:700;color:#fff;background:linear-gradient(160deg,var(--fur),var(--fur-d));border:none;padding:12px;border-radius:14px;box-shadow:0 4px 0 var(--fur-d)">📋 复制计划 JSON</button>
+    </div>
   </div>
 </div>
 
@@ -206,24 +210,24 @@ const DAYS={
    {k:"running",n:"下车跑",c:"aero",s:"3-5km · easy",note:"不追配速"},
    {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",w:"3kg",note:"泵感·不借力"},
  ]},
- 2:{t:"划船爬坡 + 完整背",f:"低冲击容量 + 背",cat:"aero",tip:"背部主训练日。但划船机已吃背和核心,力量留 1-2 余力别力竭。",items:[
+ 2:{t:"划船爬坡 + 胸",f:"低冲击容量 + 胸",cat:"aero",tip:"胸主训日。划船/爬坡顾有氧容量,力量专注推(俯卧撑系)。",items:[
    {k:"rowing_erg",n:"划船机",c:"aero",s:"40-60min · Z2",note:""},
    {k:"incline_walk",n:"爬坡",c:"aero",s:"30-45min · Z2",note:"低冲击刷容量"},
-   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"4 × 8-12",w:"35kg",note:"背主训·留1-2余力"},
-   {k:"seated_row",n:"坐姿划船",c:"str",s:"4 × 8-12",w:"单臂15-20kg",note:"中背厚度"},
+   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",w:"自重",note:"路线 10×5→10×8"},
+   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3-4 × 10-15",w:"自重",note:"补上胸容量"},
  ]},
- 3:{t:"中等骑跑 + 推肩",f:"正式 mini brick",cat:"aero",tip:"可比周一认真点——一周里第二重要的骑跑专项日,仅次于周六。",items:[
+ 3:{t:"中等骑跑 + 背",f:"正式 mini brick + 背",cat:"aero",tip:"背主训日,也是一周第二重要的骑跑专项日(仅次于周六)。下拉+划船留 1-2 余力别力竭。",items:[
    {k:"cycling",n:"骑行",c:"aero",s:"60-75min · Z2",note:"专项主课"},
    {k:"running",n:"跑步",c:"aero",s:"5km · easy~Z2上沿",note:""},
-   {k:"pushup",n:"标准俯卧撑",c:"str",s:"8-10组 × 5-8",w:"自重",note:"路线 10×5→10×8"},
-   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3 × 10-15",w:"自重",note:"补上胸"},
-   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",w:"3kg",note:""},
+   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"4 × 8-12",w:"35kg",note:"背主训·留1-2余力"},
+   {k:"seated_row",n:"坐姿划船",c:"str",s:"4 × 8-12",w:"单臂15-20kg",note:"中背厚度"},
+   {k:"lateral_raise",n:"侧平举",c:"str",s:"3-4 × 12-20",w:"3kg",note:"泵感·不借力"},
  ]},
- 4:{t:"划船爬坡 + 背减量",f:"有氧容量 + 背维护",cat:"aero",tip:"别练成完整背日。周二已练背、周六会划、周日还有拉——周四是维护不是轰炸。",items:[
+ 4:{t:"划船爬坡 + 胸",f:"有氧容量 + 胸",cat:"aero",tip:"第二个胸日。可比周二略减,别完全一样轰。",items:[
    {k:"rowing_erg",n:"划船机",c:"aero",s:"30-45min",note:""},
    {k:"incline_walk",n:"爬坡",c:"aero",s:"45-60min",note:""},
-   {k:"lat_pulldown",n:"高位下拉",c:"str",s:"3 × 8-12",w:"35kg",note:"减量"},
-   {k:"seated_row",n:"坐姿划船",c:"str",s:"2-3 × 8-12",w:"单臂15-20kg",note:"维护·不轰炸"},
+   {k:"pushup",n:"标准俯卧撑",c:"str",s:"6-8组 × 5-8",w:"自重",note:"略减量"},
+   {k:"incline_pushup",n:"上斜俯卧撑",c:"str",s:"3 × 10-15",w:"自重",note:""},
  ]},
  5:{t:"轻居家恢复",f:"主动恢复 · 不是真训练",cat:"rec",tip:"卡死:10-15min 结束,不力竭、不练腿、不练核心。促血流保习惯,不是制造刺激。",items:[
    {k:"pushup",n:"俯卧撑(留余力)",c:"rec",s:"几组 · 留3-4余力",w:"自重",note:"绝不力竭"},
@@ -343,6 +347,38 @@ document.querySelectorAll(".tabs button").forEach(b=>{
     window.scrollTo(0,0);
   };
 });
+// 导出计划 JSON 到剪贴板
+document.getElementById("exportBtn").onclick=async()=>{
+  const order=[1,2,3,4,5,6,0];
+  const exp={
+    plan:"减脂期 · 铁三 BASE · 新版周计划",
+    updated:new Date().toISOString().slice(0,10),
+    discipline:"周一轻·周三中·周六重;胸=二四五·背=三·肩=一三五六;骑跑一三六·划船爬坡二四",
+    hr:{max:197,rhr:56,Z2:"141-154",LTHR:177},
+    days:order.map(i=>({
+      weekday:"周"+WD[i],
+      title:DAYS[i].t,
+      focus:DAYS[i].f,
+      coachTip:DAYS[i].tip||"",
+      items:DAYS[i].items.map(it=>({
+        name:it.n,
+        type:it.c==="aero"?"有氧":it.c==="rec"?"恢复":"力量",
+        sets:it.s,
+        weight:it.w||null,
+        note:it.note||""
+      }))
+    }))
+  };
+  const txt=JSON.stringify(exp,null,2);
+  const btn=document.getElementById("exportBtn");
+  const ok=()=>{btn.textContent="✅ 已复制到剪贴板!";setTimeout(()=>btn.textContent="📋 复制计划 JSON",1800);};
+  const fail=()=>{
+    // 回退:用临时 textarea
+    try{const ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();ok();}
+    catch(e){btn.textContent="❌ 复制失败,长按选中";console.log(txt);}
+  };
+  try{ await navigator.clipboard.writeText(txt); ok(); }catch(e){ fail(); }
+};
 render();
 if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}
 </script>

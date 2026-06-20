@@ -1,6 +1,6 @@
 // 仓鼠教练 PWA service worker
 // 策略:HTML/导航 = 网络优先(在线必拿最新,离线回退缓存);图片/字体等静态 = 缓存优先
-const CACHE = "cangshu-coach-v6";
+const CACHE = "cangshu-coach-v7";
 
 self.addEventListener("install", e => { self.skipWaiting(); });
 
